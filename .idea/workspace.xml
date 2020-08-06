@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d73242-f665-44cb-8d1b-87b61ab53e02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/mace/queue/ArrayQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mace/queue/CircleArrayQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,13 +22,27 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1000">
-                <caret line="473" lean-forward="true" selection-start-line="473" selection-end-line="473" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/src/com/mace/queue/CircleArrayQueue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2420">
+              <caret line="7" column="21" lean-forward="true" selection-end-line="187" />
+              <folding>
+                <element signature="e#2496#2497#0" expanded="true" />
+                <element signature="e#2549#2550#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
+                <element signature="e#808#809#0" expanded="true" />
+                <element signature="e#2044#2045#0" expanded="true" />
+                <element signature="e#2068#2069#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mace/queue/ArrayQueue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="13" column="33" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -57,6 +70,7 @@
         <option value="$PROJECT_DIR$/src/com/mace/sparsearr/SparseArr.java" />
         <option value="$PROJECT_DIR$/src/com/mace/queue/ArrayQueue.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/mace/queue/CircleArrayQueue.java" />
       </list>
     </option>
   </component>
@@ -79,7 +93,9 @@
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -97,6 +113,19 @@
               <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mace" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mace" type="462c0819:PsiDirectoryNode" />
+              <item name="queue" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -126,9 +155,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ArrayQueue">
+  <component name="RunManager" selected="Application.CircleArrayQueue">
     <configuration name="ArrayQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mace.queue.ArrayQueue" />
+      <module name="Java数据结构和算法" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mace.queue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CircleArrayQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mace.queue.CircleArrayQueue" />
       <module name="Java数据结构和算法" />
       <extension name="coverage">
         <pattern>
@@ -155,6 +197,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CircleArrayQueue" />
         <item itemvalue="Application.ArrayQueue" />
         <item itemvalue="Application.SparseArr" />
       </list>
@@ -171,7 +214,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596594012516</updated>
       <workItem from="1596594016274" duration="11638000" />
-      <workItem from="1596678245878" duration="1884000" />
+      <workItem from="1596678245878" duration="5728000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -201,11 +244,18 @@
       <option name="project" value="LOCAL" />
       <updated>1596618109908</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="数组模拟队列简单实现">
+      <created>1596680176831</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596680176831</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13522000" />
+    <option name="totallyTimeSpent" value="17366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -218,8 +268,8 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6938776" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39941692" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.69343066" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39854014" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -278,7 +328,8 @@
     <MESSAGE value="稀疏数组" />
     <MESSAGE value="增加readme" />
     <MESSAGE value="稀疏数组实现+队列初探" />
-    <option name="LAST_COMMIT_MESSAGE" value="稀疏数组实现+队列初探" />
+    <MESSAGE value="数组模拟队列简单实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="数组模拟队列简单实现" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -293,6 +344,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>(rear + 1) % maxSize == front</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>result[i]</expression-string>
         <language-id>JAVA</language-id>
@@ -330,11 +386,6 @@
       </expression>
       <expression>
         <expression-string>br.readLine().length()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>s</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -376,13 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mace/queue/ArrayQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="182" column="14" selection-start-line="182" selection-start-column="14" selection-end-line="182" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -390,6 +434,28 @@
             <caret line="473" lean-forward="true" selection-start-line="473" selection-end-line="473" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mace/queue/ArrayQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mace/queue/CircleArrayQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2420">
+          <caret line="7" column="21" lean-forward="true" selection-end-line="187" />
+          <folding>
+            <element signature="e#2496#2497#0" expanded="true" />
+            <element signature="e#2549#2550#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#2044#2045#0" expanded="true" />
+            <element signature="e#2068#2069#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
