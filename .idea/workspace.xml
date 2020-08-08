@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d73242-f665-44cb-8d1b-87b61ab53e02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,29 +21,21 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="143" column="5" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="143" selection-end-column="5" />
+            <state relative-caret-position="429">
+              <caret line="201" column="5" lean-forward="true" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
               <folding>
-                <element signature="e#4168#4169#0" expanded="true" />
-                <element signature="e#4193#4194#0" expanded="true" />
-                <element signature="e#4226#4227#0" expanded="true" />
-                <element signature="e#4254#4255#0" expanded="true" />
-                <element signature="e#4285#4286#0" expanded="true" />
-                <element signature="e#4312#4313#0" expanded="true" />
-                <element signature="e#4352#4353#0" expanded="true" />
-                <element signature="e#4384#4385#0" expanded="true" />
-                <element signature="e#4419#4420#0" expanded="true" />
-                <element signature="e#4450#4451#0" expanded="true" />
-                <element signature="e#4498#4499#0" expanded="true" />
-                <element signature="e#4538#4539#0" expanded="true" />
-                <element signature="e#4571#4572#0" expanded="true" />
-                <element signature="e#4598#4599#0" expanded="true" />
-                <element signature="e#4640#4641#0" expanded="true" />
-                <element signature="e#4672#4673#0" expanded="true" />
+                <element signature="e#4894#4895#0" expanded="true" />
+                <element signature="e#4955#4956#0" expanded="true" />
+                <element signature="e#5013#5014#0" expanded="true" />
+                <element signature="e#5085#5086#0" expanded="true" />
+                <element signature="e#5151#5152#0" expanded="true" />
+                <element signature="e#5239#5240#0" expanded="true" />
+                <element signature="e#5299#5300#0" expanded="true" />
+                <element signature="e#5373#5374#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,8 +45,16 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="473">
-                <caret line="1047" selection-start-line="1047" selection-end-line="1047" />
+              <first_editor relative-caret-position="3945">
+                <caret line="961" column="3" selection-start-line="961" selection-start-column="3" selection-end-line="961" selection-end-column="3" />
+                <folding>
+                  <element signature="e#2531#2532#0" expanded="true" />
+                  <element signature="e#2583#2584#0" expanded="true" />
+                  <element signature="e#2645#2646#0" expanded="true" />
+                  <element signature="e#2681#2682#0" expanded="true" />
+                  <element signature="e#4079#4080#0" expanded="true" />
+                  <element signature="e#4136#4137#0" expanded="true" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -119,6 +118,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -179,7 +179,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,7 +291,8 @@
       <workItem from="1596678245878" duration="9126000" />
       <workItem from="1596703387003" duration="2550000" />
       <workItem from="1596763587298" duration="11198000" />
-      <workItem from="1596790596895" duration="50000" />
+      <workItem from="1596790596895" duration="236000" />
+      <workItem from="1596857169837" duration="1811000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -336,11 +336,18 @@
       <option name="project" value="LOCAL" />
       <updated>1596692795773</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="单链表 添加 查看">
+      <created>1596790701650</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596790701650</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34562000" />
+    <option name="totallyTimeSpent" value="36559000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -355,7 +362,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2661725" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27021563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -424,7 +431,8 @@
     <MESSAGE value="稀疏数组实现+队列初探" />
     <MESSAGE value="数组模拟队列简单实现" />
     <MESSAGE value="数组模拟循环队列" />
-    <option name="LAST_COMMIT_MESSAGE" value="数组模拟循环队列" />
+    <MESSAGE value="单链表 添加 查看" />
+    <option name="LAST_COMMIT_MESSAGE" value="单链表 添加 查看" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -598,25 +606,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="143" column="5" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="143" selection-end-column="5" />
+        <state relative-caret-position="429">
+          <caret line="201" column="5" lean-forward="true" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
           <folding>
-            <element signature="e#4168#4169#0" expanded="true" />
-            <element signature="e#4193#4194#0" expanded="true" />
-            <element signature="e#4226#4227#0" expanded="true" />
-            <element signature="e#4254#4255#0" expanded="true" />
-            <element signature="e#4285#4286#0" expanded="true" />
-            <element signature="e#4312#4313#0" expanded="true" />
-            <element signature="e#4352#4353#0" expanded="true" />
-            <element signature="e#4384#4385#0" expanded="true" />
-            <element signature="e#4419#4420#0" expanded="true" />
-            <element signature="e#4450#4451#0" expanded="true" />
-            <element signature="e#4498#4499#0" expanded="true" />
-            <element signature="e#4538#4539#0" expanded="true" />
-            <element signature="e#4571#4572#0" expanded="true" />
-            <element signature="e#4598#4599#0" expanded="true" />
-            <element signature="e#4640#4641#0" expanded="true" />
-            <element signature="e#4672#4673#0" expanded="true" />
+            <element signature="e#4894#4895#0" expanded="true" />
+            <element signature="e#4955#4956#0" expanded="true" />
+            <element signature="e#5013#5014#0" expanded="true" />
+            <element signature="e#5085#5086#0" expanded="true" />
+            <element signature="e#5151#5152#0" expanded="true" />
+            <element signature="e#5239#5240#0" expanded="true" />
+            <element signature="e#5299#5300#0" expanded="true" />
+            <element signature="e#5373#5374#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -624,8 +624,16 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="473">
-            <caret line="1047" selection-start-line="1047" selection-end-line="1047" />
+          <first_editor relative-caret-position="3945">
+            <caret line="961" column="3" selection-start-line="961" selection-start-column="3" selection-end-line="961" selection-end-column="3" />
+            <folding>
+              <element signature="e#2531#2532#0" expanded="true" />
+              <element signature="e#2583#2584#0" expanded="true" />
+              <element signature="e#2645#2646#0" expanded="true" />
+              <element signature="e#2681#2682#0" expanded="true" />
+              <element signature="e#4079#4080#0" expanded="true" />
+              <element signature="e#4136#4137#0" expanded="true" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>

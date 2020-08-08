@@ -22,10 +22,16 @@ public class SingleLinkedListDemo {
 
         list.update(new HearNode(2, "小吴", "星星"));
 
+
+
         //list.addById(h1);
         //list.addById(h3);
         //list.addById(h2);
 
+        list.show();
+
+        list.deleteById(2);
+        System.out.println("----------------------------------------");
         list.show();
     }
 }
@@ -161,6 +167,38 @@ class SingleLinkedList{
         }else{
             System.out.println("链表没有数据...");
         }
+    }
+
+
+    /**
+     * 根据节点id，删除对应节点。
+     */
+
+    public void deleteById(int id){
+        HearNode temp = head;
+        /**
+         * 用来标识是否找到
+         */
+        boolean flag = false;
+
+        while(true){
+            if(temp.getNext() == null){
+                System.out.println("对应节点未找到...");
+                break;
+            }
+
+            if(temp.getNext().getNo() == id){
+                flag = true;
+                break;
+            }
+
+            temp = temp.getNext();
+        }
+
+        if(flag){
+            temp.setNext(temp.getNext().getNext());
+        }
+
     }
 
 

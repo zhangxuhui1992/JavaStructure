@@ -956,10 +956,10 @@ class HearNode{
 
 ~~~
 
-安装英雄的排名进行添加
+安照英雄的排名进行添加
 
 ~~~ java
-	/**
+   /**
      * 根据英雄的id排名进行添加
      * 如果id已存在则不能添加
      */
@@ -1008,7 +1008,7 @@ class HearNode{
 传入node节点，根据id，更新节点信息。
 
 ~~~ java
-	/**
+   /**
      * 根据节点id,更新节点信息
      */
     public void update(HearNode node){
@@ -1042,6 +1042,43 @@ class HearNode{
         }
     }
 ~~~
+
+根据节点id，删除节点。
+
+~~~ java
+    /**
+     * 根据节点id，删除对应节点。
+     */
+
+    public void deleteById(int id){
+        HearNode temp = head;
+        /**
+         * 用来标识是否找到
+         */
+        boolean flag = false;
+
+        while(true){
+            if(temp.getNext() == null){
+                System.out.println("对应节点未找到...");
+                break;
+            }
+
+            if(temp.getNext().getNo() == id){
+                flag = true;
+                break;
+            }
+
+            temp = temp.getNext();
+        }
+
+        if(flag){
+            temp.setNext(temp.getNext().getNext());
+        }
+
+    }
+~~~
+
+
 
 
 
