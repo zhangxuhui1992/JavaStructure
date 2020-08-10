@@ -19,8 +19,9 @@ public class SingleLinkedListDemo {
 
         list.show();
         System.out.println("----------------------------------------");
-
-        list.update(new HearNode(2, "小吴", "星星"));
+        reverList(list.getHead());
+        list.show();
+        //list.update(new HearNode(2, "小吴", "星星"));
 
 
 
@@ -28,12 +29,119 @@ public class SingleLinkedListDemo {
         //list.addById(h3);
         //list.addById(h2);
 
-        list.show();
+        //list.show();
 
-        list.deleteById(2);
-        System.out.println("----------------------------------------");
-        list.show();
+        //list.deleteById(2);
+       // System.out.println("----------------------------------------");
+        //list.show();
+
+        //System.out.println("----------------------------------------");
+
+        //System.out.println(getLength(list.getHead()));
+
+        //System.out.println(getHearNodeBeyK(list.getHead(),2));
+        //list.show();
+        //System.out.println("----------------------------------------");
+
     }
+
+    /**
+     * 单链表的反转
+     */
+    public static void reverList(HearNode head){
+        if(head.getNext() == null || head.getNext().getNext() == null){
+            System.out.println("链表为空或只有一个节点无法反转");
+        }
+
+        /**
+         * 新建头节点
+         */
+        HearNode newHead = new HearNode(0, "", "");
+        /**
+         * 当前节点的指针
+         */
+        HearNode temp = head.getNext();
+
+        /**
+         * 记录当前节点的下一个节点
+         */
+        HearNode next = null;
+
+        /**
+         * 遍历
+         */
+        while (temp != null){
+            /**
+             * next记录当前节点的下一个节点
+             */
+            next = temp.getNext();
+            /**
+             * 当前节点的next指向新头链表的next
+             */
+            temp.setNext(newHead.getNext());
+            /**
+             * 新链表的头节点指向当前节点
+             */
+            newHead.setNext(temp);
+
+            /**
+             * 指针后移
+             */
+            temp = next;
+        }
+
+        head.setNext(newHead.getNext());
+
+    }
+
+    /**
+     * 查找单链表中的倒数第k个节点
+     *
+     * 参数 头节点 倒数k
+     */
+    public static HearNode getHearNodeBeyK(HearNode head,int k){
+
+        if(head.getNext() == null){
+            return null;
+        }
+
+        int size = getLength(head);
+
+        if(k <= 0 || k > size){
+            return null;
+        }
+
+        HearNode temp = head.getNext();
+
+        for(int i = 0 ; i < size - k ;i++){
+            temp = temp.getNext();
+        }
+        return temp;
+    }
+
+
+
+    /**
+     * 获取单链表的有效节点数量 参数 - 头节点
+     * 不包含头节点
+     */
+    public static int getLength(HearNode head){
+        if(head.getNext() == null){
+            return 0;
+        }
+
+        int length = 0 ;
+
+        HearNode temp = head.getNext();
+
+        while(temp != null){
+            length++;
+            temp = temp.getNext();
+        }
+
+        return length;
+    }
+
 }
 
 /**
@@ -202,6 +310,13 @@ class SingleLinkedList{
     }
 
 
+    public HearNode getHead() {
+        return head;
+    }
+
+    public void setHead(HearNode head) {
+        this.head = head;
+    }
 }
 
 

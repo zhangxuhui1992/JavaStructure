@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="82d73242-f665-44cb-8d1b-87b61ab53e02" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,41 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="201" column="5" lean-forward="true" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
-              <folding>
-                <element signature="e#4894#4895#0" expanded="true" />
-                <element signature="e#4955#4956#0" expanded="true" />
-                <element signature="e#5013#5014#0" expanded="true" />
-                <element signature="e#5085#5086#0" expanded="true" />
-                <element signature="e#5151#5152#0" expanded="true" />
-                <element signature="e#5239#5240#0" expanded="true" />
-                <element signature="e#5299#5300#0" expanded="true" />
-                <element signature="e#5373#5374#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="3945">
-                <caret line="961" column="3" selection-start-line="961" selection-start-column="3" selection-end-line="961" selection-end-column="3" />
-                <folding>
-                  <element signature="e#2531#2532#0" expanded="true" />
-                  <element signature="e#2583#2584#0" expanded="true" />
-                  <element signature="e#2645#2646#0" expanded="true" />
-                  <element signature="e#2681#2682#0" expanded="true" />
-                  <element signature="e#4079#4080#0" expanded="true" />
-                  <element signature="e#4136#4137#0" expanded="true" />
-                </folding>
-              </first_editor>
-              <second_editor />
+            <state relative-caret-position="484">
+              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -86,8 +55,8 @@
         <option value="$PROJECT_DIR$/src/com/mace/queue/CircleArrayQueue.java" />
         <option value="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedList.java" />
         <option value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/TwoSum.java" />
-        <option value="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java" />
       </list>
     </option>
   </component>
@@ -118,8 +87,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -150,14 +119,6 @@
               <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="mace" type="462c0819:PsiDirectoryNode" />
-              <item name="linkedlist" type="462c0819:PsiDirectoryNode" />
-              <item name="SingleLinkedListDemo.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mace" type="462c0819:PsiDirectoryNode" />
               <item name="queue" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -167,6 +128,14 @@
               <item name="mace" type="462c0819:PsiDirectoryNode" />
               <item name="queue" type="462c0819:PsiDirectoryNode" />
               <item name="ArrayQueue.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mace" type="462c0819:PsiDirectoryNode" />
+              <item name="queue" type="462c0819:PsiDirectoryNode" />
+              <item name="CircleArrayQueue.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
             <path>
               <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
@@ -292,7 +261,8 @@
       <workItem from="1596703387003" duration="2550000" />
       <workItem from="1596763587298" duration="11198000" />
       <workItem from="1596790596895" duration="236000" />
-      <workItem from="1596857169837" duration="1811000" />
+      <workItem from="1596857169837" duration="5047000" />
+      <workItem from="1597039222686" duration="2477000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -343,11 +313,18 @@
       <option name="project" value="LOCAL" />
       <updated>1596790701650</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="单链表 删除">
+      <created>1596860467830</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596860467830</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36559000" />
+    <option name="totallyTimeSpent" value="42272000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -362,7 +339,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27021563" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27493262" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -392,30 +369,30 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25808626" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27021563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.69343066" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39854014" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46355686" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39795917" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32944608" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32944608" />
-      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Problems" order="9" weight="0.32944608" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32944608" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32944608" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info active="true" anchor="right" id="leetcode" order="4" side_tool="true" visible="true" weight="0.26954177" />
+      <window_info anchor="right" id="leetcode" order="4" side_tool="true" weight="0.26954177" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Word Book" order="7" side_tool="true" />
@@ -432,7 +409,8 @@
     <MESSAGE value="数组模拟队列简单实现" />
     <MESSAGE value="数组模拟循环队列" />
     <MESSAGE value="单链表 添加 查看" />
-    <option name="LAST_COMMIT_MESSAGE" value="单链表 添加 查看" />
+    <MESSAGE value="单链表 删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="单链表 删除" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -594,32 +572,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mace/sparsearr/SparseArr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2818">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Java数据结构和算法.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="201" column="5" lean-forward="true" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
-          <folding>
-            <element signature="e#4894#4895#0" expanded="true" />
-            <element signature="e#4955#4956#0" expanded="true" />
-            <element signature="e#5013#5014#0" expanded="true" />
-            <element signature="e#5085#5086#0" expanded="true" />
-            <element signature="e#5151#5152#0" expanded="true" />
-            <element signature="e#5239#5240#0" expanded="true" />
-            <element signature="e#5299#5300#0" expanded="true" />
-            <element signature="e#5373#5374#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -636,6 +590,20 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mace/sparsearr/SparseArr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
         </state>
       </provider>
     </entry>
