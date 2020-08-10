@@ -24,8 +24,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            <state relative-caret-position="176">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/util/Stack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-736">
+              <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/util/Vector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="98" column="34" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -262,7 +280,7 @@
       <workItem from="1596763587298" duration="11198000" />
       <workItem from="1596790596895" duration="236000" />
       <workItem from="1596857169837" duration="5047000" />
-      <workItem from="1597039222686" duration="2477000" />
+      <workItem from="1597039222686" duration="4405000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -320,11 +338,18 @@
       <option name="project" value="LOCAL" />
       <updated>1596860467830</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="单链表 反转">
+      <created>1597048583269</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1597048583270</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42272000" />
+    <option name="totallyTimeSpent" value="44200000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,7 +371,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.46355686" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46355686" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39795917" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -410,7 +435,8 @@
     <MESSAGE value="数组模拟循环队列" />
     <MESSAGE value="单链表 添加 查看" />
     <MESSAGE value="单链表 删除" />
-    <option name="LAST_COMMIT_MESSAGE" value="单链表 删除" />
+    <MESSAGE value="单链表 反转" />
+    <option name="LAST_COMMIT_MESSAGE" value="单链表 反转" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -423,6 +449,8 @@
         <watch expression="list" />
         <watch expression="list" />
         <watch expression="list.head" />
+        <watch expression="head" />
+        <watch expression="temp" />
       </configuration>
     </watches-manager>
   </component>
@@ -600,10 +628,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/util/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="98" column="34" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/util/Stack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-736">
+          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        <state relative-caret-position="176">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
         </state>
       </provider>
     </entry>

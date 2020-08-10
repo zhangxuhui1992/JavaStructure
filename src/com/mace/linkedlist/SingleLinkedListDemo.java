@@ -1,5 +1,7 @@
 package com.mace.linkedlist;
 
+import java.util.Stack;
+
 /**
  * 简单链表实现
  * @author zhangxuhui
@@ -19,8 +21,9 @@ public class SingleLinkedListDemo {
 
         list.show();
         System.out.println("----------------------------------------");
-        reverList(list.getHead());
-        list.show();
+        //reverList(list.getHead());
+        reversePrint(list.getHead());
+        //list.show();
         //list.update(new HearNode(2, "小吴", "星星"));
 
 
@@ -43,6 +46,27 @@ public class SingleLinkedListDemo {
         //list.show();
         //System.out.println("----------------------------------------");
 
+    }
+
+    /**
+     * 链表的逆序打印，没有改变原来链表的结构
+     */
+    public static void reversePrint(HearNode head){
+        if(head.getNext() == null || head.getNext().getNext() == null){
+            System.out.println("链表为空或只有一个节点，无法打印...");
+            return;
+        }
+
+        HearNode temp = head.getNext();
+        Stack<HearNode> stack = new Stack<>();
+        while(temp != null){
+            stack.push(temp);
+            temp = temp.getNext();
+        }
+
+        while (stack.size() > 0){
+            System.out.println(stack.pop());
+        }
     }
 
     /**
