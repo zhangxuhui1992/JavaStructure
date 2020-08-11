@@ -11,18 +11,31 @@ import java.util.Stack;
 public class SingleLinkedListDemo {
     public static void main(String[] args) {
         HearNode h1 = new HearNode(1, "宋江", "及时雨");
-        HearNode h2 = new HearNode(2, "吴用", "智多星");
-        HearNode h3 = new HearNode(3, "林冲", "豹子头");
+        HearNode h3 = new HearNode(3, "吴用", "智多星");
+        HearNode h8 = new HearNode(8, "林冲", "豹子头");
+
+
+        HearNode h6 = new HearNode(6, "宋江", "及时雨");
+        HearNode h9 = new HearNode(9, "吴用", "智多星");
+        HearNode h10 = new HearNode(10, "林冲", "豹子头");
 
         SingleLinkedList list = new SingleLinkedList();
         list.add(h1);
-        list.add(h2);
         list.add(h3);
+        list.add(h8);
+
+        SingleLinkedList list2 = new SingleLinkedList();
+        list2.add(h6);
+        list2.add(h9);
+        list2.add(h10);
 
         list.show();
         System.out.println("----------------------------------------");
+        list2.show();
+        System.out.println("----------------------------------------");
+        containsList(list,list2).show();
         //reverList(list.getHead());
-        reversePrint(list.getHead());
+        //reversePrint(list.getHead());
         //list.show();
         //list.update(new HearNode(2, "小吴", "星星"));
 
@@ -46,6 +59,27 @@ public class SingleLinkedListDemo {
         //list.show();
         //System.out.println("----------------------------------------");
 
+    }
+
+    /**
+     * 合并两个有序的单链表，合并之后的链表任然有序
+     */
+    public static SingleLinkedList containsList(SingleLinkedList h1,SingleLinkedList h2){
+        /**
+         * 遍历h2将h2中每一个节点按排名添加到h1
+         */
+        if(h1 == null || h2 == null || h1.getHead() == null || h2.getHead() == null){
+            System.out.println("链表为空....");
+            return null;
+        }
+        HearNode cur = h2.getHead().getNext();
+        while (cur != null){
+            HearNode next = cur.getNext();
+            h1.addById(cur);
+            cur = next;
+        }
+        h2.getHead().setNext(null);
+        return h1;
     }
 
     /**
