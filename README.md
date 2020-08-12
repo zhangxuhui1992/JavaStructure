@@ -787,7 +787,7 @@ class CircleQueue{
 
 ~~~
 
-## 四、链表
+## 四、单向链表
 
 ### 1、概念
 
@@ -959,7 +959,7 @@ class HearNode{
 安照英雄的排名进行添加
 
 ~~~ java
-   /**
+/**
      * 根据英雄的id排名进行添加
      * 如果id已存在则不能添加
      */
@@ -1008,7 +1008,7 @@ class HearNode{
 传入node节点，根据id，更新节点信息。
 
 ~~~ java
-   /**
+/**
      * 根据节点id,更新节点信息
      */
     public void update(HearNode node){
@@ -1046,7 +1046,7 @@ class HearNode{
 根据节点id，删除节点。
 
 ~~~ java
-    /**
+ /**
      * 根据节点id，删除对应节点。
      */
 
@@ -1078,7 +1078,798 @@ class HearNode{
     }
 ~~~
 
+### 3、练习：单链表中有效节点的个数
+
+~~~ java
+	/**
+     * 获取单链表的有效节点数量
+     * 不包含头节点
+     */
+    public static int getLength(HearNode node){
+        if(node.getNext() == null){
+            return 0;
+        }
+
+        int length = 0 ;
+
+        HearNode temp = node.getNext();
+
+        while(temp != null){
+            length++;
+            temp = temp.getNext();
+        }
+
+        return length;
+    }
+~~~
+
+### 4、查找单链表中的倒数第k个节点
+
+~~~ java
+   /**
+     * 查找单链表中的倒数第k个节点
+     *
+     * 参数 头节点 倒数k
+     */
+    public static HearNode getHearNodeBeyK(HearNode head,int k){
+
+        if(head.getNext() == null){
+            return null;
+        }
+
+        int size = getLength(head);
+
+        if(k <= 0 || k > size){
+            return null;
+        }
+
+        HearNode temp = head.getNext();
+
+        for(int i = 0 ; i < size - k ;i++){
+            temp = temp.getNext();
+        }
+        return temp;
+    }
+~~~
+
+### 5、单链表的反转
+
+思路：
+
+- 新建头节点
+- 遍历原始链表，让每一个节点添加到新链表的头节点的后面
+- 将原始节点的头节点指向新的链表
+
+~~~ java
+  /**
+     * 单链表的反转
+     */
+    public static void reverList(HearNode head){
+        if(head.getNext() == null || head.getNext().getNext() == null){
+            System.out.println("链表为空或只有一个节点无法反转");
+        }
+
+        /**
+         * 新建头节点
+         */
+        HearNode newHead = new HearNode(0, "", "");
+        /**
+         * 当前节点的指针
+         */
+        HearNode temp = head.getNext();
+
+        /**
+         * 记录当前节点的下一个节点
+         */
+        HearNode next = null;
+
+        /**
+         * 遍历
+         */
+        while (temp != null){
+            /**
+             * next记录当前节点的下一个节点
+             */
+            next = temp.getNext();
+            /**
+             * 新链表当前节点的next指向新头链表的next
+             */
+            temp.setNext(newHead.getNext());
+            /**
+             * 新链表的头节点指向当前节点
+             */
+            newHead.setNext(temp);
+
+            /**
+             * 指针后移
+             */
+            temp = next;
+        }
+
+        head.setNext(newHead.getNext());
+
+    }
+~~~
+
+### 6、单链表的逆序打印
+
+思路：
+
+- 使用栈的先进后出特点
+
+~~~ java
+	/**
+     * 链表的逆序打印，没有改变原来链表的结构
+     */
+    public static void reversePrint(HearNode head){
+        if(head.getNext() == null || head.getNext().getNext() == null){
+            System.out.println("链表为空或只有一个节点，无法打印...");
+            return;
+        }
+
+        HearNode temp = head.getNext();
+        Stack<HearNode> stack = new Stack<>();
+        while(temp != null){
+            stack.push(temp);
+            temp = temp.getNext();
+        }
+
+        while (stack.size() > 0){
+            System.out.println(stack.pop());
+        }
+    }
+~~~
+
+### 7、双向链表
+
+![](https://ftp.bmp.ovh/imgs/2020/08/9c58f7f066505252.png) 
+
+- 遍历和单链表一样，只是可以向两个方向遍历。
+- 添加-找到链表的最后节点temp.next = node,node.pre = temp
+- 修改，找到对应的节点，修改相应的值即可。
+- 删除，找到要删除的节点，temp.pre.next=temp.next,temp.next.pre=temp.pre。
+
+~~~java
+package com.mace.linkedlist;
+
+/**
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-08-11 15:10
+ */
+public class DoubleLinkedListDemo {
+    public static void main(String[] args) {
+        System.out.println("双向链表测试");
+
+        HearNode2 h1 = new HearNode2(1, "宋江", "及时雨");
+        HearNode2 h3 = new HearNode2(3, "吴用", "智多星");
+        HearNode2 h8 = new HearNode2(8, "林冲", "豹子头");
+
+        DoubleLinkedList list = new DoubleLinkedList();
+
+        list.add(h1);
+        list.add(h3);
+        list.add(h8);
+
+        list.show();
+        System.out.println("----------------------------------------------------");
+        list.update(new HearNode2(3, "小吴","星星"));
+        list.show();
+        System.out.println("----------------------------------------------------");
+        list.deleteById(3);
+        list.show();
+        list.addById(new HearNode2(3, "鲁智深", "花和尚"));
+        System.out.println("----------------------------------------------------");
+        list.show();
+    }
+}
+
+class DoubleLinkedList{
+    /**
+     * 头节点
+     */
+    private HearNode2 head = new HearNode2(-1, "", "");
+
+    public HearNode2 getHead() {
+        return head;
+    }
+
+    public void setHead(HearNode2 head) {
+        this.head = head;
+    }
+
+    /**
+     * 显示链表
+     */
+    public void show(){
+        if(head.getNext() != null){
+            HearNode2 temp = head.getNext();
+            while (true){
+                if(temp!= null){
+                    System.out.println(temp);
+                }else{
+                    return;
+                }
+                temp = temp.getNext();
+            }
+        }else{
+            System.out.println("链表没有数据...");
+        }
+    }
+
+    /**
+     * 依次往节点的末尾添加
+     * 添加节点 头节点不变，遍历时使用临时变量记录最后的节点
+     */
+
+    public void add(HearNode2 node){
+        HearNode2 temp = head;
+        while(true){
+            /**
+             * 如果当前节点的下一个节点为null,则temp为最后一个节点
+             * 退出循环
+             */
+            if(temp.getNext() == null){
+                break;
+            }else{
+                //否则将temp后移，继续循环。
+                temp = temp.getNext();
+            }
+        }
+        /**
+         * 当循环退出时，temp为链表的最后节点
+         * 双向指向
+         */
+        temp.setNext(node);
+        node.setPre(temp);
+    }
+
+    /**
+     * 根据节点id,更新节点信息
+     * 和单向链表一样
+     */
+    public void update(HearNode2 node){
+
+        if(head.getNext() == null){
+            System.out.println("链表为空。。。");
+            return;
+        }
+
+        HearNode2 temp = head;
+        /**
+         * 找到对应节点的标志位
+         */
+        boolean flag = false;
+
+        while (true){
+            if(temp.getNext() == null){
+                break;
+            }
+            if(temp.getNo() == node.getNo()){
+                flag = true;
+                break;
+            }
+            temp = temp.getNext();
+        }
+        if(flag){
+            temp.setName(node.getName());
+            temp.setNickName(node.getNickName());
+        }else{
+            System.out.println("没有找到对应的更新对象，不能修改。");
+        }
+    }
+
+
+    /**
+     * 根据节点id，删除对应节点。
+     */
+
+    public void deleteById(int id){
+
+        if(head.getNext() == null){
+            System.out.println("链表为空...");
+            return;
+        }
+
+        /**
+         * 用来标识是否找到
+         */
+        boolean flag = false;
+        HearNode2 temp = head.getNext();
+
+        while(true){
+            if(temp == null){
+                System.out.println("对应节点未找到...");
+                break;
+            }
+
+            if(temp.getNo() == id){
+                flag = true;
+                break;
+            }
+
+            temp = temp.getNext();
+        }
+
+        if(flag){
+            temp.getPre().setNext(temp.getNext());
+            if(temp.getNext() != null){
+                temp.getNext().setPre(temp.getPre());
+            }
+        }
+    }
+
+
+    /**
+     * 根据英雄的id排名进行添加
+     * 如果id已存在则不能添加
+     */
+    public void addById(HearNode2 node){
+        /**
+         * 临时指针记录当前位置
+         */
+        HearNode2 temp = head;
+
+        /**
+         * id是否已存在的标志位
+         */
+        boolean flag = false;
+
+        while(true){
+            /**
+             * 已经到链表的末尾
+             */
+            if(temp.getNext() == null){
+                break;
+            }
+            /**
+             * 找到合适的添加位置
+             */
+            if(temp.getNext().getNo() > node.getNo()){
+                break;
+            }else if(temp.getNext().getNo() == node.getNo()){
+                flag = true;
+                break;
+            }
+            /**
+             * 如果以上都没有找到则指针后移
+             */
+            temp = temp.getNext();
+        }
+
+        if(flag){
+            System.out.println("此英雄排名已存在 ID ="+ node.getNo());
+        }else{
+            HearNode2 next = temp.getNext();
+            temp.setNext(node);
+            node.setPre(temp);
+            node.setNext(next);
+            next.setPre(node);
+        }
+    }
+
+}
+
+
+class HearNode2{
+    /**
+     * 编号
+     */
+    private int no;
+    /**
+     * 姓名
+     */
+    private String name;
+    /**
+     * 外号
+     */
+    private String nickName;
+    /**
+     * 下一节点
+     */
+    private HearNode2 next;
+
+    /**
+     * 前一个节点
+     */
+    private HearNode2 pre;
+
+    public HearNode2(int no,String name,String nickName){
+        this.no = no;
+        this.name = name;
+        this.nickName = nickName;
+    }
 
 
 
+    @Override
+    public String toString() {
+        return "HearNode{" +
+                "no=" + no +
+                ", name='" + name + '\'' +
+                ", nickName='" + nickName + '\'' +
+                '}';
+    }
+
+    public int getNo() {
+        return no;
+    }
+
+    public void setNo(int no) {
+        this.no = no;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public HearNode2 getNext() {
+        return next;
+    }
+
+    public void setNext(HearNode2 next) {
+        this.next = next;
+    }
+
+    public HearNode2 getPre() {
+        return pre;
+    }
+
+    public void setPre(HearNode2 pre) {
+        this.pre = pre;
+    }
+}
+
+~~~
+
+### 8、单向环形链表
+
+​	Josephu(约瑟夫、约瑟夫环) 问题
+​	Josephu 问题为：设编号为 1，2，… n 的 n 个人围坐一圈，约定编号为 k（1<=k<=n）的人从 1 开始报数，数
+到 m 的那个人出列，它的下一位又从 1 开始报数，数到 m 的那个人又出列，依次类推，直到所有人出列为止，由
+此产生一个出队编号的序列。
+
+​	提示：用一个不带头结点的循环链表来处理 Josephu 问题：先构成一个有 n 个结点的单循环链表，然后由 k 结点起从 1 开始计数，计到 m 时，对应结点从链表中删除，然后再从被删除结点的下一个结点又从 1 开始计数，直
+到最后一个结点从链表中删除算法结束。
+
+问题分析：
+
+![](https://ftp.bmp.ovh/imgs/2020/08/b03bca2ef734391c.png)
+
+ 代码思路：![](https://ftp.bmp.ovh/imgs/2020/08/f30494cd6313459b.png) 
+
+出圈思路：
+
+![](https://ftp.bmp.ovh/imgs/2020/08/f495a6caaa7dd2d6.png)
+
+ ~~~java
+package com.mace.linkedlist;
+
+/**
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-08-12 10:39
+ */
+public class CircleSingleLinkedListDemo {
+    public static void main(String[] args) {
+        CircleSingleLinkedList list = new CircleSingleLinkedList();
+        list.add(5);
+        list.show();
+        System.out.println("--------------------------------------");
+        list.count(1,2,5);
+    }
+}
+
+
+class CircleSingleLinkedList{
+    /**
+     * 头节点
+     */
+    private Boy first = null;
+
+    public Boy getFirst() {
+        return first;
+    }
+
+    public void setFirst(Boy first) {
+        this.first = first;
+    }
+
+    /**
+     * 添加节点
+     */
+    public void add(int num){
+        if(num < 1){
+            System.out.println("num值不正确");
+            return;
+        }
+
+        Boy cur = null;
+
+        for(int i = 1 ; i <= num ; i ++){
+            Boy boy = new Boy(i);
+            if(i == 1){
+                first = boy;
+                first.setNext(first);
+                cur = first;
+            }else{
+                cur.setNext(boy);
+                boy.setNext(first);
+                cur = boy;
+            }
+        }
+    }
+
+
+    /**
+     * 遍历当前的环形链表
+     */
+    public void show(){
+        if(first == null){
+            System.out.println("链表为空，无法遍历");
+            return;
+        }
+
+        Boy temp = first;
+
+        while (true){
+            System.out.println(temp);
+
+            if(temp.getNext() == first){
+                return;
+            }
+
+            temp = temp.getNext();
+        }
+    }
+
+    /**
+     * 出圈代码实现
+     * @param startNo 开始的编号
+     * @param count 数多少下
+     * @param nums  总共有多少个boy
+     */
+    public void count(int startNo,int count,int nums){
+        /**
+         * 先对数据进行校验
+         */
+        if(first == null || startNo < 1 || startNo > nums){
+            System.out.println("输入参数有误，请重新输入...");
+            return;
+        }
+
+        Boy helper = first;
+
+        while (true){
+            if (helper.getNext() == first){
+                break;
+            }
+            helper = helper.getNext();
+        }
+
+        for(int i = 0 ; i < startNo -1 ; i++){
+            first = first.getNext();
+            helper = helper.getNext();
+        }
+
+        while (true){
+            if(helper == first){
+                break;
+            }
+            for(int k = 0 ; k< count -1 ;k++){
+                first = first.getNext();
+                helper = helper.getNext();
+            }
+
+            System.out.println(first);
+
+            first = first.getNext();
+            helper.setNext(first);
+        }
+        System.out.println("圈中最后剩"+first);
+    }
+
+}
+
+/**
+ * 孩子实体
+ */
+class Boy{
+
+    private int no;
+    private Boy next;
+
+    public Boy(int no){
+        this.no = no;
+    }
+
+    public int getNo() {
+        return no;
+    }
+
+    public void setNo(int no) {
+        this.no = no;
+    }
+
+    public Boy getNext() {
+        return next;
+    }
+
+    public void setNext(Boy next) {
+        this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return "Boy{" +
+                "no=" + no +
+                '}';
+    }
+}
+ ~~~
+
+## 七、栈
+
+### 1、栈的介绍
+
+- 栈是一个 先入后出(FILO-First In Last Out) 的有序列表
+- 栈(stack) 是限制线性表中元素的插入和删除只能在线性表的同一端进行的一种特殊线性表。 允许插入和删除的一端，为 变化的一端，称为栈顶(Top) ，另一端为 固定的一端，称为栈底(Bottom)。
+- 根据栈的定义可知 ， 最先放入栈中元素在栈底 ， 最后放入的元素在栈顶 ， 而删除元素刚好相反 ， 最后放入的元素最先删除，最先放入的元素最后删除。
+
+ ![](https://ftp.bmp.ovh/imgs/2020/08/ed4bca9d03c8c394.png) 
+
+### 2、栈的应用场景
+
+- 子程序的调用：在跳往子程序前，会先将下个指令的地址存到堆栈中，直到子程序执行完后再将地址取出，以
+  回到原来的程序中。
+- 处理递归调用：和子程序的调用类似，只是除了储存下一个指令的地址外，也将参数、区域变量等数据存入堆
+  栈中。
+- 表达式的转换[中缀表达式转后缀表达式]与求值(实际解决)。
+- 二叉树的遍历。
+- 图形的深度优先(depth 一 first)搜索法。
+
+### 3、数组模拟栈
+
+![](https://ftp.bmp.ovh/imgs/2020/08/bcb21a92acd70476.png) 
+
+~~~java
+package com.mace.stack;
+
+import java.util.Scanner;
+
+/**
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-08-12 14:48
+ */
+public class ArrayStackDemo {
+    public static void main(String[] args) {
+        //测试一下ArrayStack 是否正确
+        //先创建一个ArrayStack对象->表示栈
+        ArrayStack stack = new ArrayStack(4);
+        String key = "";
+        boolean loop = true; //控制是否退出菜单
+        Scanner scanner = new Scanner(System.in);
+
+        while(loop) {
+            System.out.println("show: 表示显示栈");
+            System.out.println("exit: 退出程序");
+            System.out.println("push: 表示添加数据到栈(入栈)");
+            System.out.println("pop: 表示从栈取出数据(出栈)");
+            System.out.println("请输入你的选择");
+            key = scanner.next();
+            switch (key) {
+                case "show":
+                    stack.show();
+                    break;
+                case "push":
+                    System.out.println("请输入一个数");
+                    int value = scanner.nextInt();
+                    stack.push(value);
+                    break;
+                case "pop":
+                    try {
+                        int res = stack.pop();
+                        System.out.printf("出栈的数据是 %d\n", res);
+                    } catch (Exception e) {
+                        // TODO: handle exception
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case "exit":
+                    scanner.close();
+                    loop = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        System.out.println("程序退出~~~");
+    }
+}
+
+/**
+ * 数组模拟栈
+ */
+class ArrayStack{
+    private int maxSize;//栈的大小
+    private int[] arr;//数组模拟栈
+    private int top=-1;//top表示栈顶，默认为-1
+
+    public ArrayStack(int maxSize){
+        this.maxSize = maxSize;
+        arr = new int[this.maxSize];
+    }
+
+    /**
+     * 栈满
+     */
+    public boolean isFull(){
+        return top == maxSize - 1 ;
+    }
+
+    /**
+     * 栈空
+     */
+    public boolean isEmpty(){
+        return top == -1;
+    }
+
+    /**
+     * 压栈
+     */
+    public void push(int num){
+        if(isFull()){
+            System.out.println("栈满，无法添加");
+            return;
+        }
+
+        top++;
+        arr[top] = num;
+
+    }
+
+    /**
+     * 出栈
+     */
+    public int pop(){
+        if(isEmpty()){
+            throw new RuntimeException("栈空，已没有数据");
+        }
+
+        int val = arr[top];
+        top--;
+        return val;
+    }
+
+    /**
+     * 遍历
+     */
+    public void show(){
+        if(isEmpty()){
+            System.out.println("栈为空，无法遍历....");
+            return;
+        }
+
+        for(int i = top;i>=0;i--){
+            System.out.printf("索引为%d,值为%d \n",i,arr[i]);
+        }
+    }
+
+}
+
+~~~
 
