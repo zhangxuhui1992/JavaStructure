@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d73242-f665-44cb-8d1b-87b61ab53e02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/mace/linkedlist/CircleSingleLinkedListDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mace/stack/ArrayStackDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,25 +22,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/mace/linkedlist/CircleSingleLinkedListDemo.java">
+        <entry file="file://$PROJECT_DIR$/src/com/mace/stack/ArrayStackDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="110" column="32" lean-forward="true" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
+            <state relative-caret-position="276">
+              <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
               <folding>
-                <element signature="e#327#328#0" expanded="true" />
-                <element signature="e#355#356#0" expanded="true" />
-                <element signature="e#394#395#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
-                <element signature="e#368#369#0" expanded="true" />
-                <element signature="e#394#395#0" expanded="true" />
-                <element signature="e#419#420#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-                <element signature="e#480#481#0" expanded="true" />
-                <element signature="e#508#509#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="e#572#573#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
+                <element signature="e#1969#1970#0" expanded="true" />
+                <element signature="e#2011#2012#0" expanded="true" />
+                <element signature="e#2068#2069#0" expanded="true" />
+                <element signature="e#2100#2101#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,6 +66,7 @@
         <option value="$PROJECT_DIR$/src/com/mace/linkedlist/DoubleLinkedList.java" />
         <option value="$PROJECT_DIR$/src/com/mace/linkedlist/DoubleLinkedListDemo.java" />
         <option value="$PROJECT_DIR$/src/com/mace/linkedlist/CircleSingleLinkedListDemo.java" />
+        <option value="$PROJECT_DIR$/src/com/mace/stack/ArrayStackDemo.java" />
       </list>
     </option>
   </component>
@@ -131,7 +122,7 @@
               <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="mace" type="462c0819:PsiDirectoryNode" />
-              <item name="linkedlist" type="462c0819:PsiDirectoryNode" />
+              <item name="stack" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -161,13 +152,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CircleSingleLinkedListDemo">
-    <configuration name="CircleArrayQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mace.queue.CircleArrayQueue" />
+  <component name="RunManager" selected="Application.ArrayStackDemo">
+    <configuration name="ArrayStackDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mace.stack.ArrayStackDemo" />
       <module name="Java数据结构和算法" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mace.queue.*" />
+          <option name="PATTERN" value="com.mace.stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -228,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArrayStackDemo" />
         <item itemvalue="Application.CircleSingleLinkedListDemo" />
         <item itemvalue="Application.DoubleLinkedListDemo" />
         <item itemvalue="Application.SingleLinkedListDemo" />
         <item itemvalue="Application.TwoSum" />
-        <item itemvalue="Application.CircleArrayQueue" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +245,7 @@
       <workItem from="1596857169837" duration="5047000" />
       <workItem from="1597039222686" duration="6089000" />
       <workItem from="1597116101678" duration="5593000" />
-      <workItem from="1597197532227" duration="2683000" />
+      <workItem from="1597197532227" duration="5647000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -333,11 +324,18 @@
       <option name="project" value="LOCAL" />
       <updated>1597132465650</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="单向环形链表 约瑟夫问题">
+      <created>1597213007316</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1597213007316</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54160000" />
+    <option name="totallyTimeSpent" value="57124000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,7 +350,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.28436658" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28436658" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -426,7 +424,8 @@
     <MESSAGE value="单链表 反转" />
     <MESSAGE value="单链表 逆序打印" />
     <MESSAGE value="双向链表 增删改查" />
-    <option name="LAST_COMMIT_MESSAGE" value="双向链表 增删改查" />
+    <MESSAGE value="单向环形链表 约瑟夫问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="单向环形链表 约瑟夫问题" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -541,24 +540,6 @@
     <entry file="file://$PROJECT_DIR$/Java数据结构和算法.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="3945">
-            <caret line="961" column="3" selection-start-line="961" selection-start-column="3" selection-end-line="961" selection-end-column="3" />
-            <folding>
-              <element signature="e#2531#2532#0" expanded="true" />
-              <element signature="e#2583#2584#0" expanded="true" />
-              <element signature="e#2645#2646#0" expanded="true" />
-              <element signature="e#2681#2682#0" expanded="true" />
-              <element signature="e#4079#4080#0" expanded="true" />
-              <element signature="e#4136#4137#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/util/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -634,8 +615,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/linkedlist/CircleSingleLinkedListDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="110" column="32" lean-forward="true" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
+        <state relative-caret-position="308">
+          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
           <folding>
             <element signature="e#327#328#0" expanded="true" />
             <element signature="e#355#356#0" expanded="true" />
@@ -651,6 +632,29 @@
             <element signature="e#535#536#0" expanded="true" />
             <element signature="e#572#573#0" expanded="true" />
             <element signature="e#604#605#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-759">
+            <caret line="714" column="19" lean-forward="true" selection-start-line="714" selection-start-column="19" selection-end-line="714" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mace/stack/ArrayStackDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding>
+            <element signature="e#1969#1970#0" expanded="true" />
+            <element signature="e#2011#2012#0" expanded="true" />
+            <element signature="e#2068#2069#0" expanded="true" />
+            <element signature="e#2100#2101#0" expanded="true" />
           </folding>
         </state>
       </provider>
