@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d73242-f665-44cb-8d1b-87b61ab53e02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/mace/stack/PolandNotation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mace/stack/PolandNotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mace/stack/PolandNotation.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,12 +24,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mace/stack/PolandNotation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+            <state relative-caret-position="220">
+              <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#475#476#0" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
+                <element signature="e#1072#1080#0" expanded="true" />
+                <element signature="e#1307#1315#0" expanded="true" />
+                <element signature="e#1703#1704#0" expanded="true" />
+                <element signature="e#1757#1758#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -271,7 +273,7 @@
       <workItem from="1597197532227" duration="6435000" />
       <workItem from="1597281508633" duration="1164000" />
       <workItem from="1597372101358" duration="640000" />
-      <workItem from="1597715212893" duration="6600000" />
+      <workItem from="1597715212893" duration="10067000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -378,11 +380,18 @@
       <option name="project" value="LOCAL" />
       <updated>1597718900012</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="逆波兰表达式计算">
+      <created>1597736489587</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1597736489587</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66316000" />
+    <option name="totallyTimeSpent" value="69783000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -397,7 +406,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2264151" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2264151" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -427,14 +436,14 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28436658" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2264151" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37026238" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3708029" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39795917" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -475,7 +484,8 @@
     <MESSAGE value="数组模拟栈 代码实现" />
     <MESSAGE value="笔记更新" />
     <MESSAGE value="数组模拟栈 实现中缀表达式计算" />
-    <option name="LAST_COMMIT_MESSAGE" value="数组模拟栈 实现中缀表达式计算" />
+    <MESSAGE value="逆波兰表达式计算" />
+    <option name="LAST_COMMIT_MESSAGE" value="逆波兰表达式计算" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -751,12 +761,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/stack/PolandNotation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        <state relative-caret-position="220">
+          <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#1072#1080#0" expanded="true" />
+            <element signature="e#1307#1315#0" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1757#1758#0" expanded="true" />
           </folding>
         </state>
       </provider>
