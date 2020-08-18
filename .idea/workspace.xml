@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d73242-f665-44cb-8d1b-87b61ab53e02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/mace/stack/ArrayStackDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mace/stack/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,17 +20,17 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/mace/stack/ArrayStackDemo.java">
+        <entry file="file://$PROJECT_DIR$/src/com/mace/stack/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+            <state relative-caret-position="220">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
-                <element signature="e#1969#1970#0" expanded="true" />
-                <element signature="e#2011#2012#0" expanded="true" />
-                <element signature="e#2068#2069#0" expanded="true" />
-                <element signature="e#2100#2101#0" expanded="true" />
+                <element signature="e#806#807#0" expanded="true" />
+                <element signature="e#881#882#0" expanded="true" />
+                <element signature="e#500#501#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,12 +61,13 @@
         <option value="$PROJECT_DIR$/src/com/mace/queue/CircleArrayQueue.java" />
         <option value="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedList.java" />
         <option value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/TwoSum.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/com/mace/linkedlist/SingleLinkedListDemo.java" />
         <option value="$PROJECT_DIR$/src/com/mace/linkedlist/DoubleLinkedList.java" />
         <option value="$PROJECT_DIR$/src/com/mace/linkedlist/DoubleLinkedListDemo.java" />
         <option value="$PROJECT_DIR$/src/com/mace/linkedlist/CircleSingleLinkedListDemo.java" />
         <option value="$PROJECT_DIR$/src/com/mace/stack/ArrayStackDemo.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/mace/stack/Calculator.java" />
       </list>
     </option>
   </component>
@@ -97,7 +98,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -128,6 +128,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -152,9 +153,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ArrayStackDemo">
+  <component name="RunManager" selected="Application.Calculator">
     <configuration name="ArrayStackDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mace.stack.ArrayStackDemo" />
+      <module name="Java数据结构和算法" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mace.stack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mace.stack.Calculator" />
       <module name="Java数据结构和算法" />
       <extension name="coverage">
         <pattern>
@@ -205,25 +219,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TwoSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.editor.cn.TwoSum" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetcode.editor.cn.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Calculator" />
         <item itemvalue="Application.ArrayStackDemo" />
         <item itemvalue="Application.CircleSingleLinkedListDemo" />
         <item itemvalue="Application.DoubleLinkedListDemo" />
         <item itemvalue="Application.SingleLinkedListDemo" />
-        <item itemvalue="Application.TwoSum" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +247,10 @@
       <workItem from="1596857169837" duration="5047000" />
       <workItem from="1597039222686" duration="6089000" />
       <workItem from="1597116101678" duration="5593000" />
-      <workItem from="1597197532227" duration="5647000" />
+      <workItem from="1597197532227" duration="6435000" />
+      <workItem from="1597281508633" duration="1164000" />
+      <workItem from="1597372101358" duration="640000" />
+      <workItem from="1597715212893" duration="2796000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -331,11 +336,25 @@
       <option name="project" value="LOCAL" />
       <updated>1597213007316</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="数组模拟栈 代码实现">
+      <created>1597216540109</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1597216540109</updated>
+    </task>
+    <task id="LOCAL-00014" summary="笔记更新">
+      <created>1597216690157</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1597216690157</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57124000" />
+    <option name="totallyTimeSpent" value="62512000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -348,16 +367,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28436658" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2264151" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37026238" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37026238" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39795917" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -425,7 +443,9 @@
     <MESSAGE value="单链表 逆序打印" />
     <MESSAGE value="双向链表 增删改查" />
     <MESSAGE value="单向环形链表 约瑟夫问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="单向环形链表 约瑟夫问题" />
+    <MESSAGE value="数组模拟栈 代码实现" />
+    <MESSAGE value="笔记更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -639,8 +659,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-759">
-            <caret line="714" column="19" lean-forward="true" selection-start-line="714" selection-start-column="19" selection-end-line="714" selection-end-column="19" />
+          <first_editor relative-caret-position="579">
+            <caret line="1875" selection-start-line="1875" selection-end-line="1875" />
           </first_editor>
           <second_editor />
         </state>
@@ -648,13 +668,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/stack/ArrayStackDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        <state relative-caret-position="1860">
+          <caret line="124" column="1" lean-forward="true" selection-start-line="56" selection-end-line="124" selection-end-column="1" />
           <folding>
             <element signature="e#1969#1970#0" expanded="true" />
             <element signature="e#2011#2012#0" expanded="true" />
             <element signature="e#2068#2069#0" expanded="true" />
             <element signature="e#2100#2101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mace/stack/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
           </folding>
         </state>
       </provider>
