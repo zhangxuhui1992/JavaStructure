@@ -787,7 +787,7 @@ class CircleQueue{
 
 ~~~
 
-## 四、单向链表
+## 四、链表
 
 ### 1、概念
 
@@ -1532,6 +1532,7 @@ class HearNode2{
     }
 }
 
+
 ~~~
 
 ### 8、单向环形链表
@@ -1872,4 +1873,538 @@ class ArrayStack{
 }
 
 ~~~
+
+### 4、栈实现综合计算器(中缀表达式)
+
+ ![](https://ftp.bmp.ovh/imgs/2020/08/9bff7ca0e6a554b7.png) 
+
+~~~ java
+package com.mace.stack;
+
+/**
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-08-18 10:26
+ */
+public class Calculator {
+    public static void main(String[] args) {
+        String expression = "7*2*2-5+1-5+3-4";
+
+        //创建两个栈，一个数栈、一个符号栈
+        ArrayStack2 numStack = new ArrayStack2(10);
+        ArrayStack2 operStack = new ArrayStack2(10);
+
+        //定义需要的相关变量
+        int index = 0;//用于扫描
+        int num1 = 0;
+        int num2 = 0;
+        int oper = 0;
+        int res = 0;
+        char ch = ' '; //将每次扫描得到char保存到ch
+        String keepNum = ""; //用于拼接 多位数
+
+
+        while(true){
+            //依次得到expression 的每一个字符
+            ch = expression.substring(index, index+1).charAt(0);
+
+            if(operStack.isOper(ch)){//如果是运算符
+                //判断当前的符号栈是否为空
+                if(!operStack.isEmpty()) {
+                    //如果符号栈有操作符，就进行比较,如果当前的操作符的优先级小于或者等于栈中的操作符,就需要从数栈中pop出两个数,
+                    //在从符号栈中pop出一个符号，进行运算，将得到结果，入数栈，然后将当前的操作符入符号栈
+                    if(operStack.priority(ch) <= operStack.priority(operStack.peek())) {
+                        num1 = numStack.pop();
+                        num2 = numStack.pop();
+                        oper = operStack.pop();
+                        res = numStack.cal(num1, num2, oper);
+                        //把运算的结果如数栈
+                        numStack.push(res);
+                        //然后将当前的操作符入符号栈
+                        operStack.push(ch);
+                    } else {
+                        //如果当前的操作符的优先级大于栈中的操作符， 就直接入符号栈.
+                        operStack.push(ch);
+                    }
+                }else {
+                    //如果为空直接入符号栈..
+                    operStack.push(ch); // 1 + 3
+                }
+            }else{//是数字
+                //处理多位数
+                keepNum += ch;
+
+                //如果ch已经是expression的最后一位，就直接入栈
+                if (index == expression.length() - 1) {
+                    numStack.push(Integer.parseInt(keepNum));
+                }else{
+
+                    //判断下一个字符是不是数字，如果是数字，就继续扫描，如果是运算符，则入栈
+                    //注意是看后一位，不是index++
+                    if (operStack.isOper(expression.substring(index+1,index+2).charAt(0))) {
+                        //如果后一位是运算符，则入栈 keepNum = "1" 或者 "123"
+                        numStack.push(Integer.parseInt(keepNum));
+                        //重要的!!!!!!, keepNum清空
+                        keepNum = "";
+
+                    }
+                }
+            }
+
+            //让index + 1, 并判断是否扫描到expression最后.
+            index++;
+            if (index >= expression.length()) {
+                break;
+            }
+        }
+
+        //当表达式扫描完毕，就顺序的从 数栈和符号栈中pop出相应的数和符号，并运行.
+        while(true) {
+            //如果符号栈为空，则计算到最后的结果, 数栈中只有一个数字【结果】
+            if(operStack.isEmpty()) {
+                break;
+            }
+            num1 = numStack.pop();
+            num2 = numStack.pop();
+            oper = operStack.pop();
+            res = numStack.cal(num1, num2, oper);
+            numStack.push(res);//入栈
+        }
+        //将数栈的最后数，pop出，就是结果
+        int res2 = numStack.pop();
+        System.out.printf("表达式 %s = %d", expression, res2);
+
+    }
+}
+
+
+
+/**
+ * 数组模拟栈
+ */
+class ArrayStack2{
+    private int maxSize;//栈的大小
+    private int[] arr;//数组模拟栈
+    private int top=-1;//top表示栈顶，默认为-1
+
+    public ArrayStack2(int maxSize){
+        this.maxSize = maxSize;
+        arr = new int[this.maxSize];
+    }
+
+    //返回运算符的优先级，优先级是程序员来确定, 优先级使用数字表示
+    //数字越大，则优先级就越高.
+    public int priority(int oper) {
+        if(oper == '*' || oper == '/'){
+            return 1;
+        } else if (oper == '+' || oper == '-') {
+            return 0;
+        } else {
+            return -1; // 假定目前的表达式只有 +, - , * , /
+        }
+    }
+    //判断是不是一个运算符
+    public boolean isOper(char val) {
+        return val == '+' || val == '-' || val == '*' || val == '/';
+    }
+    //计算方法
+    public int cal(int num1, int num2, int oper) {
+        int res = 0; // res 用于存放计算的结果
+        switch (oper) {
+            case '+':
+                res = num1 + num2;
+                break;
+            case '-':
+                res = num2 - num1;// 注意顺序
+                break;
+            case '*':
+                res = num1 * num2;
+                break;
+            case '/':
+                res = num2 / num1;
+                break;
+            default:
+                break;
+        }
+        return res;
+    }
+
+    //增加一个方法，可以返回当前栈顶的值, 但是不是真正的pop
+    public int peek(){
+        return arr[top];
+    }
+
+    /**
+     * 栈满
+     */
+    public boolean isFull(){
+        return top == maxSize - 1 ;
+    }
+
+    /**
+     * 栈空
+     */
+    public boolean isEmpty(){
+        return top == -1;
+    }
+
+    /**
+     * 压栈
+     */
+    public void push(int num){
+        if(isFull()){
+            System.out.println("栈满，无法添加");
+            return;
+        }
+
+        top++;
+        arr[top] = num;
+
+    }
+
+    /**
+     * 出栈
+     */
+    public int pop(){
+        if(isEmpty()){
+            throw new RuntimeException("栈空，已没有数据");
+        }
+
+        int val = arr[top];
+        top--;
+        return val;
+    }
+
+    /**
+     * 遍历
+     */
+    public void show(){
+        if(isEmpty()){
+            System.out.println("栈为空，无法遍历....");
+            return;
+        }
+
+        for(int i = top;i>=0;i--){
+            System.out.printf("索引为%d,值为%d \n",i,arr[i]);
+        }
+    }
+
+}
+~~~
+
+### 5、逆波兰计算器
+
+要求完成如下任务:
+
+- 输入一个逆波兰表达式(后缀表达式)，使用栈(Stack), 计算其结果
+- 支持小括号和多位数整数，因为这里我们主要讲的是数据结构，因此计算器进行简化，只支持 对整数的计算。
+- 思路分析
+
+![](https://ftp.bmp.ovh/imgs/2020/08/7729d86de7a4f807.png) 
+
+~~~ java
+package com.mace.stack;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
+
+/**
+ * 逆波兰表达式计算
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-08-18 15:24
+ */
+public class PolandNotation {
+    public static void main(String[] args) {
+        /**
+         * 先给出逆波兰表达式
+         * (3+4)×5-6  -> 3 4 + 5 × 6 -
+         */
+        String press = "3 4 + 5 * 6 -";
+
+        List<String> list = getListString(press);
+
+        System.out.println("运算结果="+execute(list));
+    }
+
+
+    /**
+     * 将表达式存入list,便于读取
+     */
+    public static List<String> getListString(String press){
+        return Arrays.asList(press.split(" "));
+    }
+
+
+    /**
+     * 完成逆波兰表达式的计算
+     */
+    public static int execute(List<String> list){
+        Stack<String> stack = new Stack<>();
+
+        for(String str:list){
+            /**
+             * 匹配数字
+             */
+            if(str.matches("\\d+")){
+                stack.push(str);
+            }else{
+
+                int num2 = Integer.parseInt(stack.pop());
+                int num1 = Integer.parseInt(stack.pop());
+                int result = 0 ;
+
+                if("+".equals(str)){
+                    result = num1 + num2;
+                }else if("-".equals(str)){
+                    result = num1 - num2;
+                }else if("*".equals(str)){
+                    result = num1 * num2;
+                }else if("/".equals(str)){
+                    result = num1 / num2;
+                }else{
+                    throw new RuntimeException("操作符不合法");
+                }
+
+                stack.push(String.valueOf(result));
+            }
+        }
+        return Integer.parseInt(stack.pop());
+    }
+}
+
+~~~
+
+### 6、中缀表达式转后缀表达式
+
+ ![](https://ftp.bmp.ovh/imgs/2020/08/3dc443bcfda110d7.png) 
+
+~~~ java
+package com.mace.stack;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
+
+/**
+ * 逆波兰表达式计算
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-08-18 15:24
+ */
+public class PolandNotation {
+    public static void main(String[] args) {
+        /**
+         * 先给出逆波兰表达式
+         * (3+4)×5-6  -> 3 4 + 5 × 6 -
+         */
+        //String press = "3 4 + 5 * 6 -";
+
+        //List<String> list = getListString(press);
+
+        //System.out.println("运算结果="+EXECUTE(LIST));
+
+
+        /**
+         * 中缀表达式转后缀表达式 1+((2+3)×4)-5 => 转成 1 2 3 + 4 × + 5 –
+         * 1.先将中缀表达式转为list
+         * 2.转换
+         */
+        String expression = "1+((2+3)*4)-5";
+
+        List<String> list = infixStringList(expression);
+
+        System.out.println("转换后的list = "+list);
+
+        System.out.println(execute(parseSuffixExpreesionList(list)));
+
+
+    }
+
+    //即 ArrayList [1,+,(,(,2,+,3,),*,4,),-,5]  =》 ArrayList [1,2,3,+,4,*,+,5,–]
+    //方法：将得到的中缀表达式对应的List => 后缀表达式对应的List
+    public static List<String> parseSuffixExpreesionList(List<String> ls) {
+        //定义两个栈
+        Stack<String> s1 = new Stack<String>(); // 符号栈
+        //说明：因为s2 这个栈，在整个转换过程中，没有pop操作，而且后面我们还需要逆序输出
+        //因此比较麻烦，这里我们就不用 Stack<String> 直接使用 List<String> s2
+        //Stack<String> s2 = new Stack<String>(); // 储存中间结果的栈s2
+        List<String> s2 = new ArrayList<String>(); // 储存中间结果的Lists2
+
+        //遍历ls
+        for(String item: ls) {
+            //如果是一个数，加入s2
+            if(item.matches("\\d+")) {
+                s2.add(item);
+            } else if (item.equals("(")) {
+                s1.push(item);
+            } else if (item.equals(")")) {
+                //如果是右括号“)”，则依次弹出s1栈顶的运算符，并压入s2，直到遇到左括号为止，此时将这一对括号丢弃
+                while(!s1.peek().equals("(")) {
+                    s2.add(s1.pop());
+                }
+                s1.pop();//!!! 将 ( 弹出 s1栈， 消除小括号
+            } else {
+                //当item的优先级小于等于s1栈顶运算符, 将s1栈顶的运算符弹出并加入到s2中，再次转到(4.1)与s1中新的栈顶运算符相比较
+                //问题：我们缺少一个比较优先级高低的方法
+                while(s1.size() != 0 && Operation.getValue(s1.peek()) >= Operation.getValue(item) ) {
+                    s2.add(s1.pop());
+                }
+                //还需要将item压入栈
+                s1.push(item);
+            }
+        }
+
+        //将s1中剩余的运算符依次弹出并加入s2
+        while(s1.size() != 0) {
+            s2.add(s1.pop());
+        }
+
+        return s2; //注意因为是存放到List, 因此按顺序输出就是对应的后缀表达式对应的List
+
+    }
+
+    /**
+     * 中缀表达式转list
+     */
+    public static List<String> infixStringList(String pression){
+        List<String> list = new ArrayList<>();
+
+        /**
+         * 遍历字符串指针
+         */
+        int index = 0 ;
+
+        String str;
+
+        char c;
+
+        do{
+            /**
+             * c 是运算符
+             */
+            if((c = pression.charAt(index)) < 48 || (c = pression.charAt(index)) > 57){
+                list.add(String.valueOf(c));
+                index++;
+            }else{
+                /**
+                 *  '0'[48]->'9'[57]
+                 */
+                str = "";
+                while (index < pression.length() && (c = pression.charAt(index)) >= 48 && (c = pression.charAt(index)) <=57){
+                    str += c;
+                    index++;
+                }
+                list.add(str);
+            }
+        }while (index < pression.length());
+
+        return list;
+    }
+
+
+    /**
+     * 将表达式存入list,便于读取
+     */
+    public static List<String> getListString(String press){
+        return Arrays.asList(press.split(" "));
+    }
+
+
+    /**
+     * 完成逆波兰表达式的计算
+     */
+    public static int execute(List<String> list){
+        Stack<String> stack = new Stack<>();
+
+        for(String str:list){
+            /**
+             * 匹配数字
+             */
+            if(str.matches("\\d+")){
+                stack.push(str);
+            }else{
+
+                int num2 = Integer.parseInt(stack.pop());
+                int num1 = Integer.parseInt(stack.pop());
+                int result = 0 ;
+
+                if("+".equals(str)){
+                    result = num1 + num2;
+                }else if("-".equals(str)){
+                    result = num1 - num2;
+                }else if("*".equals(str)){
+                    result = num1 * num2;
+                }else if("/".equals(str)){
+                    result = num1 / num2;
+                }else{
+                    throw new RuntimeException("操作符不合法");
+                }
+
+                stack.push(String.valueOf(result));
+            }
+        }
+        return Integer.parseInt(stack.pop());
+    }
+}
+
+
+//编写一个类 Operation 可以返回一个运算符 对应的优先级
+class Operation {
+    private static int ADD = 1;
+    private static int SUB = 1;
+    private static int MUL = 2;
+    private static int DIV = 2;
+
+    //写一个方法，返回对应的优先级数字
+    public static int getValue(String operation) {
+        int result = 0;
+        switch (operation) {
+            case "+":
+                result = ADD;
+                break;
+            case "-":
+                result = SUB;
+                break;
+            case "*":
+                result = MUL;
+                break;
+            case "/":
+                result = DIV;
+                break;
+            default:
+                System.out.println("不存在该运算符" + operation);
+                break;
+        }
+        return result;
+    }
+
+}
+
+~~~
+
+## 八、递归
+
+### 1、概念
+
+​	递归就是方法自己调用自己,每次调用时 传入不同的变量.递归有助于编程者解决复杂的问题,同时可以让代码变得简洁。
+
+![](https://ftp.bmp.ovh/imgs/2020/08/2219f60ed70b169b.png) 
+
+### 2、递归能解决什么样的问题
+
+- 各种数学问题如: 8 皇后问题 , 汉诺塔, 阶乘问题, 迷宫问题, 球和篮子的问题(google 编程大赛)
+- 各种算法中也会使用到递归，比如快排，归并排序，二分查找，分治算法等。
+- 将用栈解决的问题-->递归代码比较简洁
+
+### 3、递归需要遵守的重要规则
+
+- 执行一个方法时，就创建一个新的受保护的独立空间(栈空间)。
+- 方法的局部变量是独立的，不会相互影响, 比如 n 变量。
+- 如果方法中使用的是引用类型变量(比如数组)，就会共享该引用类型的数据。
+- 递归 必须向退出递归的条件逼近，否则就是无限递归,出现 StackOverflowError。
+- 当一个方法执行完毕，或者遇到 return，就会返回， 遵守谁调用，就将结果返回给谁，同时当方法执行完毕或
+  者返回时，该方法也就执行完毕。
 
