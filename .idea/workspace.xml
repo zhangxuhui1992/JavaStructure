@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d73242-f665-44cb-8d1b-87b61ab53e02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/mace/sort/BubbleSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mace/sort/SelectSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,10 +22,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/mace/sort/SelectSort.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-154">
+              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mace/sort/BubbleSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="176">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -62,11 +71,12 @@
         <option value="$PROJECT_DIR$/src/com/mace/stack/ArrayStackDemo.java" />
         <option value="$PROJECT_DIR$/src/com/mace/stack/Calculator.java" />
         <option value="$PROJECT_DIR$/src/com/mace/stack/PolandNotation.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/com/mace/recursion/RecursionTest.java" />
         <option value="$PROJECT_DIR$/src/com/mace/recursion/MiGong.java" />
         <option value="$PROJECT_DIR$/src/com/mace/recursion/BaHuangHou.java" />
         <option value="$PROJECT_DIR$/src/com/mace/sort/BubbleSort.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/mace/sort/SelectSort.java" />
       </list>
     </option>
   </component>
@@ -139,7 +149,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="leetcode.id" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -153,7 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BubbleSort">
+  <component name="RunManager" selected="Application.SelectSort">
     <configuration name="BaHuangHou" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mace.recursion.BaHuangHou" />
       <module name="Java数据结构和算法" />
@@ -193,19 +203,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PolandNotation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mace.stack.PolandNotation" />
-      <module name="Java数据结构和算法" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mace.stack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RecursionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mace.recursion.RecursionTest" />
       <module name="Java数据结构和算法" />
@@ -219,13 +216,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SelectSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mace.sort.SelectSort" />
+      <module name="Java数据结构和算法" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mace.sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SelectSort" />
         <item itemvalue="Application.BubbleSort" />
         <item itemvalue="Application.BaHuangHou" />
         <item itemvalue="Application.MiGong" />
         <item itemvalue="Application.RecursionTest" />
-        <item itemvalue="Application.PolandNotation" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +266,7 @@
       <workItem from="1597906902644" duration="615000" />
       <workItem from="1597973020672" duration="12000" />
       <workItem from="1598923105773" duration="10510000" />
-      <workItem from="1599010329151" duration="3914000" />
+      <workItem from="1599010329151" duration="5920000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -391,11 +401,25 @@
       <option name="project" value="LOCAL" />
       <updated>1598950854536</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="冒泡排序">
+      <created>1599014656684</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1599014656684</updated>
+    </task>
+    <task id="LOCAL-00021" summary="笔记更新">
+      <created>1599014835208</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1599014835208</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86648000" />
+    <option name="totallyTimeSpent" value="88654000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -489,9 +513,10 @@
     <MESSAGE value="数组模拟栈 实现中缀表达式计算" />
     <MESSAGE value="逆波兰表达式计算" />
     <MESSAGE value="中缀表达式转后缀表达式 完成逆波兰计算器" />
-    <MESSAGE value="笔记更新" />
     <MESSAGE value="回溯" />
-    <option name="LAST_COMMIT_MESSAGE" value="回溯" />
+    <MESSAGE value="冒泡排序" />
+    <MESSAGE value="笔记更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -758,66 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="473">
-            <caret line="2410" selection-start-line="2410" selection-end-line="2410" />
-            <folding>
-              <element signature="e#2531#2532#0" expanded="true" />
-              <element signature="e#2583#2584#0" expanded="true" />
-              <element signature="e#2645#2646#0" expanded="true" />
-              <element signature="e#2681#2682#0" expanded="true" />
-              <element signature="e#4079#4080#0" expanded="true" />
-              <element signature="e#4136#4137#0" expanded="true" />
-              <element signature="e#1131#1132#0" expanded="true" />
-              <element signature="e#1158#1159#0" expanded="true" />
-              <element signature="e#1200#1201#0" expanded="true" />
-              <element signature="e#1232#1233#0" expanded="true" />
-              <element signature="e#5506#5507#0" expanded="true" />
-              <element signature="e#5531#5532#0" expanded="true" />
-              <element signature="e#5563#5564#0" expanded="true" />
-              <element signature="e#5591#5592#0" expanded="true" />
-              <element signature="e#5621#5622#0" expanded="true" />
-              <element signature="e#5648#5649#0" expanded="true" />
-              <element signature="e#5687#5688#0" expanded="true" />
-              <element signature="e#5719#5720#0" expanded="true" />
-              <element signature="e#5753#5754#0" expanded="true" />
-              <element signature="e#5784#5785#0" expanded="true" />
-              <element signature="e#5831#5832#0" expanded="true" />
-              <element signature="e#5871#5872#0" expanded="true" />
-              <element signature="e#5904#5905#0" expanded="true" />
-              <element signature="e#5931#5932#0" expanded="true" />
-              <element signature="e#5973#5974#0" expanded="true" />
-              <element signature="e#6005#6006#0" expanded="true" />
-              <element signature="e#6037#6038#0" expanded="true" />
-              <element signature="e#6063#6064#0" expanded="true" />
-              <element signature="e#6103#6104#0" expanded="true" />
-              <element signature="e#6133#6134#0" expanded="true" />
-              <element signature="e#529#530#0" expanded="true" />
-              <element signature="e#557#558#0" expanded="true" />
-              <element signature="e#595#596#0" expanded="true" />
-              <element signature="e#629#630#0" expanded="true" />
-              <element signature="e#2690#2691#0" expanded="true" />
-              <element signature="e#2718#2719#0" expanded="true" />
-              <element signature="e#2743#2744#0" expanded="true" />
-              <element signature="e#2768#2769#0" expanded="true" />
-              <element signature="e#2800#2801#0" expanded="true" />
-              <element signature="e#2828#2829#0" expanded="true" />
-              <element signature="e#2855#2856#0" expanded="true" />
-              <element signature="e#2882#2883#0" expanded="true" />
-              <element signature="e#2918#2919#0" expanded="true" />
-              <element signature="e#2950#2951#0" expanded="true" />
-              <element signature="e#1962#1963#0" expanded="true" />
-              <element signature="e#2004#2005#0" expanded="true" />
-              <element signature="e#2060#2061#0" expanded="true" />
-              <element signature="e#2092#2093#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/sparsearr/SparseArr.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2295">
@@ -846,10 +811,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="325">
+            <caret line="2820" selection-start-line="2820" selection-end-line="2820" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/sort/BubbleSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="176">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mace/sort/SelectSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
         </state>
       </provider>
     </entry>
