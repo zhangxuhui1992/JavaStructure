@@ -1,4 +1,4 @@
-# 数据结构和算法
+数据结构和算法
 
 ## 一、线性结构和非线性结构
 
@@ -26,7 +26,7 @@
 
 ### 2、实例
 
-![](https://i.bmp.ovh/imgs/2020/08/0eddf06a73f91027.png)
+<img src="https://i.bmp.ovh/imgs/2020/08/0eddf06a73f91027.png" style="zoom:80%;" />
 
 Java代码实现
 
@@ -278,7 +278,7 @@ Process finished with exit code 0
 
 ### 2、数组简单模拟队列
 
-  ![](https://i.bmp.ovh/imgs/2020/08/802b36762f7019ec.png) 
+  <img src="https://i.bmp.ovh/imgs/2020/08/802b36762f7019ec.png" style="zoom:80%;" /> 
 
 ~~~ java
 package com.mace.queue;
@@ -594,7 +594,7 @@ Process finished with exit code 0
 
 ### 3、数组模拟环形队列
 
- ![](https://i.bmp.ovh/imgs/2020/08/6ae7f7eca0913cfc.png) 
+ <img src="https://i.bmp.ovh/imgs/2020/08/6ae7f7eca0913cfc.png" style="zoom:80%;" /> 
 
 ~~~java
 package com.mace.queue;
@@ -793,14 +793,14 @@ class CircleQueue{
 
 ​	链表是有序列表，它在内存中存储如下：
 
-​	 ![](https://i.bmp.ovh/imgs/2020/08/b49287473df48478.png) 
+​	 <img src="https://i.bmp.ovh/imgs/2020/08/b49287473df48478.png" style="zoom:50%;" /> 
 
 - 链表是以节点的方式来存储，是链式存储。
 - 每一个节点包含data域，next域：指向下一个节点
 - 链表的各个节点不一定是连续存储
 - 链表分为带头节点的链表和没有头节点的链表，根据实际的需求来确定
 
-带头节点的单链表逻辑图如下：![](https://i.bmp.ovh/imgs/2020/08/3495703a26e29189.png) 
+带头节点的单链表逻辑图如下：<img src="https://i.bmp.ovh/imgs/2020/08/3495703a26e29189.png" style="zoom:50%;" /> 
 
 ### 2、单链表简单实现
 
@@ -1222,7 +1222,7 @@ class HearNode{
 
 ### 7、双向链表
 
-![](https://ftp.bmp.ovh/imgs/2020/08/9c58f7f066505252.png) 
+<img src="https://ftp.bmp.ovh/imgs/2020/08/9c58f7f066505252.png" style="zoom:80%;" /> 
 
 - 遍历和单链表一样，只是可以向两个方向遍历。
 - 添加-找到链表的最后节点temp.next = node,node.pre = temp
@@ -1532,7 +1532,6 @@ class HearNode2{
     }
 }
 
-
 ~~~
 
 ### 8、单向环形链表
@@ -1547,13 +1546,11 @@ class HearNode2{
 
 问题分析：
 
-![](https://ftp.bmp.ovh/imgs/2020/08/b03bca2ef734391c.png)
+​					<img src="https://ftp.bmp.ovh/imgs/2020/08/b03bca2ef734391c.png" style="zoom:50%;" />	      
 
- 代码思路：![](https://ftp.bmp.ovh/imgs/2020/08/f30494cd6313459b.png) 
+ 代码思路：<img src="https://ftp.bmp.ovh/imgs/2020/08/f30494cd6313459b.png" style="zoom:50%;" /> 
 
-出圈思路：
-
-![](https://ftp.bmp.ovh/imgs/2020/08/f495a6caaa7dd2d6.png)
+出圈思路：<img src="https://ftp.bmp.ovh/imgs/2020/08/f495a6caaa7dd2d6.png" style="zoom:50%;" />
 
  ~~~java
 package com.mace.linkedlist;
@@ -1743,7 +1740,7 @@ class Boy{
 
 ### 3、数组模拟栈
 
-![](https://ftp.bmp.ovh/imgs/2020/08/bcb21a92acd70476.png) 
+<img src="https://ftp.bmp.ovh/imgs/2020/08/bcb21a92acd70476.png" style="zoom:50%;" /> 
 
 ~~~java
 package com.mace.stack;
@@ -1876,7 +1873,7 @@ class ArrayStack{
 
 ### 4、栈实现综合计算器(中缀表达式)
 
- ![](https://ftp.bmp.ovh/imgs/2020/08/9bff7ca0e6a554b7.png) 
+ <img src="https://ftp.bmp.ovh/imgs/2020/08/9bff7ca0e6a554b7.png" style="zoom:50%;" /> 
 
 ~~~ java
 package com.mace.stack;
@@ -2100,7 +2097,7 @@ class ArrayStack2{
 - 支持小括号和多位数整数，因为这里我们主要讲的是数据结构，因此计算器进行简化，只支持 对整数的计算。
 - 思路分析
 
-![](https://ftp.bmp.ovh/imgs/2020/08/7729d86de7a4f807.png) 
+<img src="https://ftp.bmp.ovh/imgs/2020/08/7729d86de7a4f807.png" style="zoom:50%;" /> 
 
 ~~~ java
 package com.mace.stack;
@@ -2391,7 +2388,7 @@ class Operation {
 
 ​	递归就是方法自己调用自己,每次调用时 传入不同的变量.递归有助于编程者解决复杂的问题,同时可以让代码变得简洁。
 
-![](https://ftp.bmp.ovh/imgs/2020/08/2219f60ed70b169b.png) 
+<img src="https://ftp.bmp.ovh/imgs/2020/08/2219f60ed70b169b.png" style="zoom:50%;" /> 
 
 ### 2、递归能解决什么样的问题
 
@@ -2407,4 +2404,417 @@ class Operation {
 - 递归 必须向退出递归的条件逼近，否则就是无限递归,出现 StackOverflowError。
 - 当一个方法执行完毕，或者遇到 return，就会返回， 遵守谁调用，就将结果返回给谁，同时当方法执行完毕或
   者返回时，该方法也就执行完毕。
+
+### 4、迷宫问题
+
+  <img src="https://ftp.bmp.ovh/imgs/2020/09/9d2388fcfa2a529e.png" style="zoom:50%;" /> 
+
+~~~java
+package com.mace.recursion;
+/**
+ * 迷宫问题
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-01 9:44
+ */
+public class MiGong {
+    public static void main(String[] args) {
+        /**
+         * 创建二维数组，模拟皇宫
+         * 1代表墙，填充数组
+         */
+        int [][] arr = new int[8][7];
+
+        for(int i = 0 ;i<7;i++){
+            arr[0][i] = 1;
+            arr[7][i] = 1;
+        }
+
+        for(int i = 1 ; i < 7 ;i++){
+            arr[i][0] = 1;
+            arr[i][6] = 1;
+        }
+
+        arr[3][1] = 1;
+        arr[3][2] = 1;
+
+        /**
+         * 迷宫初始化
+         */
+        System.out.println("迷宫初始化");
+        ArrtoString(arr);
+        setWay2(arr,1, 1);
+        System.out.println("路径查找后");
+        ArrtoString(arr);
+    }
+
+    /**
+     * 二维数组打印
+     */
+    public static void ArrtoString(int [][] arr){
+        for(int i = 0 ;i < arr.length;i++){
+            for(int k = 0 ;k <arr[i].length;k++){
+                System.out.print(arr[i][k]+"\t");
+            }
+            System.out.println();
+        }
+    }
+    /**
+     * 使用递归回溯来给小球找路
+     * 说明
+     * 	1. map 表示地图
+     * 	2. i,j 表示从地图的哪个位置开始出发 (1,1)
+     * 	3. 如果小球能到 map[6][5] 位置，则说明通路找到.
+     * 	4. 约定： 当map[i][j] 为 0 表示该点没有走过 当为 1 表示墙  ； 2 表示通路可以走 ； 3 表示该点已经走过，但是走不通
+     * 	5. 在走迷宫时，需要确定一个策略(方法) 下->右->上->左 , 如果该点走不通，再回溯
+     *
+     * @param map 地图
+     * @param i 查找位置的坐标
+     * @param j
+     * @return 如果找到通路，就返回true, 否则返回false
+     */
+    public static boolean getWay(int [][] map,int i,int j){
+        if(map[6][5] == 2) { // 通路已经找到ok
+            return true;
+        } else {
+            if(map[i][j] == 0) { //如果当前这个点还没有走过
+                //按照策略 下->右->上->左  走
+                map[i][j] = 2; // 假定该点是可以走通.
+                if(getWay(map, i+1, j)) {//向下走
+                    return true;
+                } else if (getWay(map, i, j+1)) { //向右走
+                    return true;
+                } else if (getWay(map, i-1, j)) { //向上
+                    return true;
+                } else if (getWay(map, i, j-1)){ // 向左走
+                    return true;
+                } else {
+                    //说明该点是走不通，是死路
+                    map[i][j] = 3;
+                    return false;
+                }
+            } else { // 如果map[i][j] != 0 , 可能是 1， 2， 3
+                return false;
+            }
+        }
+    }
+    //修改找路的策略，改成 上->右->下->左
+    public static boolean setWay2(int[][] map, int i, int j) {
+        if(map[6][5] == 2) { // 通路已经找到ok
+            return true;
+        } else {
+            if(map[i][j] == 0) { //如果当前这个点还没有走过
+                //按照策略 上->右->下->左
+                map[i][j] = 2; // 假定该点是可以走通.
+                if(setWay2(map, i-1, j)) {//向上走
+                    return true;
+                } else if (setWay2(map, i, j+1)) { //向右走
+                    return true;
+                } else if (setWay2(map, i+1, j)) { //向下
+                    return true;
+                } else if (setWay2(map, i, j-1)){ // 向左走
+                    return true;
+                } else {
+                    //说明该点是走不通，是死路
+                    map[i][j] = 3;
+                    return false;
+                }
+            } else { // 如果map[i][j] != 0 , 可能是 1， 2， 3
+                return false;
+            }
+        }
+    }
+}
+
+~~~
+
+### 5、八皇后问题
+
+ <img src="https://ftp.bmp.ovh/imgs/2020/09/5828abcee3563ad8.png" style="zoom:50%;" /> 
+
+​		八皇后问题，是一个古老而著名的问题，是回溯算法的典型案例。该问题是国际西洋棋棋手马克斯·贝瑟尔于
+1848 年提出：在 8×8 格的国际象棋上摆放八个皇后，使其不能互相攻击，即： 任意两个皇后都不能处于同一行 
+同一列或同一斜线上，问有多少种摆法(92)。
+
+​		思路分析：
+
+-  第一个皇后先放第一行第一列
+-  第二个皇后放在第二行第一列、然后判断是否 OK， 如果不 OK，继续放在第二列、第三列、依次把所有列都
+   放完，找到一个合适
+-  继续第三个皇后，还是第一列、第二列……直到第 8 个皇后也能放在一个不冲突的位置，算是找到了一个正确解
+-  当得到一个正确解时，在栈回退到上一个栈时，就会开始回溯，即将第一个皇后，放到第一列的所有正确解，
+   全部得到.
+-  然后回头继续第一个皇后放第二列，后面继续循环执行 1,2,3,4 的步骤
+
+说明：理论上应该创建一个二维数组来表示棋盘，但是实际上可以通过算法，用一个一维数组即可解决问题. arr[8] ={0 , 4, 7, 5, 2, 6, 1, 3} //对应 arr 下标 表示第几行，即第几个皇后，arr[i] = val , val 表示第 i+1 个皇后，放在第 i+1行的第 val+1 列。
+
+代码实现：
+
+~~~ java
+package com.mace.recursion;
+
+import java.util.zip.DeflaterOutputStream;
+
+/**
+ * 八皇后问题
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-01 14:23
+ */
+public class BaHuangHou {
+    //定义一个max表示共有多少个皇后
+    int max = 8;
+    //定义数组array, 保存皇后放置位置的结果,比如 arr = {0 , 4, 7, 5, 2, 6, 1, 3}
+    int[] array = new int[max];
+    static int count = 0;
+    static int judgeCount = 0;
+    public static void main(String[] args) {
+        //测试一把 ， 8皇后是否正确
+        double start = System.currentTimeMillis();
+        BaHuangHou queue8 = new BaHuangHou();
+        queue8.check(0);
+        System.out.printf("一共有%d解法", count);
+        System.out.printf("一共判断冲突的次数%d次", judgeCount); // 1.5w
+        double end = System.currentTimeMillis();
+        System.out.println("耗时："+(end-start)+"mm");
+
+    }
+
+
+
+    //编写一个方法，放置第n个皇后
+    //特别注意： check 是 每一次递归时，进入到check中都有  for(int i = 0; i < max; i++)，因此会有回溯
+    private void check(int n) {
+        if(n == max) {  //n = 8 , 其实8个皇后就既然放好
+            print();
+            return;
+        }
+
+        //依次放入皇后，并判断是否冲突
+        for(int i = 0; i < max; i++) {
+            //先把当前这个皇后 n , 放到该行的第1列
+            array[n] = i;
+            //判断当放置第n个皇后到i列时，是否冲突
+            if(judge(n)) { // 不冲突
+                //接着放n+1个皇后,即开始递归
+                check(n+1); //
+            }
+            //如果冲突，就继续执行 array[n] = i; 即将第n个皇后，放置在本行得 后移的一个位置
+        }
+    }
+
+    //查看当我们放置第n个皇后, 就去检测该皇后是否和前面已经摆放的皇后冲突
+    /**
+     *
+     * @param n 表示第n个皇后
+     * @return
+     */
+    private boolean judge(int n) {
+        judgeCount++;
+        for(int i = 0; i < n; i++) {
+            // 说明
+            //1. array[i] == array[n]  表示判断 第n个皇后是否和前面的n-1个皇后在同一列
+            //2. Math.abs(n-i) == Math.abs(array[n] - array[i]) 表示判断第n个皇后是否和第i皇后是否在同一斜线
+            // n = 1  放置第 2列 1 n = 1 array[1] = 1
+            // Math.abs(1-0) == 1  Math.abs(array[n] - array[i]) = Math.abs(1-0) = 1
+            //3. 判断是否在同一行, 没有必要，n 每次都在递增
+            if(array[i] == array[n] || Math.abs(n-i) == Math.abs(array[n] - array[i]) ) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //写一个方法，可以将皇后摆放的位置输出
+    private void print() {
+        count++;
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+}
+
+~~~
+
+##  九、排序
+
+### 1、介绍
+
+​	排序也称排序算法(SortAlgorithm)，排序是将 一组数据，依 指定的顺序进行 排列的过程。
+
+### 2、排序的分类
+
+- 内部排序:
+  指将需要处理的所有数据都加载到 内部存储器( 内存)中进行排序。
+- 外部排序法：
+  数据量过大，无法全部加载到内存中，需要借助 外部存储( 文件等)进行排序。
+
+<img src="https://ftp.bmp.ovh/imgs/2020/09/d385cd8e2d3d5882.png" style="zoom:50%;" /> 
+
+### 3、算法的时间复杂度
+
+度量一个程序(算法)执行时间的两种方法：
+
+​		事后统计的方法：这种方法可行, 但是有两个问题：一是要想对设计的算法的运行性能进行评测，需要实际运行该程序；二是所得时间的统计量依赖于计算机的硬件、软件等环境因素, 这种方式，要在同一台计算机的相同状态下运行，才能比较那个算法速度更快。
+
+​		事前估算的方法：通过分析某个算法的 时间复杂度来判断哪个算法更优.
+
+时间频度：
+
+​		一个算法花费的时间与算法中语句的执行次数成正比例，哪个算法中语句执行次数多，它花费时间就多。 一个算法中的语句执行次数称为语句频度或时间频度。记为 T(n)。
+
+​		T(n) = 2n +20; //忽略常数项
+
+​		T(n) = 2n^2+3n+10 //忽略低次项
+
+​		T(n) = 5n^2+7n //忽略系数
+
+算法的时间复杂度：
+
+- 一般情况下， 算法中的基本操作语句的重复执行次数是问题规模 n 的某个函数，用 T(n)表示，若有某个辅
+  助函数 f(n)，使得当 n 趋近于无穷大时，T(n) / f(n) 的极限值为不等于零的常数，则称 f(n)是 T(n)的同数量级函数。记作 T(n)= Ｏ( f(n) )，称Ｏ( f(n) ) 为算法的渐进时间复杂度，简称时间复杂度。
+
+-  T(n) 不同，但时间复杂度可能相同。 如：T(n)=n²+7n+6 与 T(n)=3n²+2n+2 它们的 T(n) 不同，但时间复杂
+  度相同，都为 O(n² )。
+
+-  计算时间复杂度的方法：
+
+  ​	用常数 1 代替运行时间中的所有加法常数 T(n)=n²+7n+6 => T(n)=n²+7n+1
+
+  ​	修改后的运行次数函数中，只保留最高阶项 T(n)=n²+7n+1 => T(n) = n²
+
+  ​	去除最高阶项的系数 T(n) = n² => T(n) = n² => O(n²)
+
+  常见的时间复杂度
+
+  - 常数阶 O(1)
+
+  - 对数阶 O(log2n)
+
+  - 线性阶 O(n)
+
+  - 线性对数阶 O(nlog2n)
+
+  - 平方阶 O(n^2)
+
+  - 立方阶 O(n^3)
+
+  - k 次方阶 O(n^k)
+
+  - 指数阶 O(2^n)
+
+     <img src="https://ftp.bmp.ovh/imgs/2020/09/2d05a5c5da28f179.png" style="zoom:50%;" /> 
+
+说明：常见的算法时间复杂度由小到大依次为：Ο(1)＜Ο(log2n)＜Ο(n)＜Ο(nlog2n)＜Ο(n2)＜Ο(n3)＜ Ο(nk) ＜
+Ο(2n) ，随着问题规模 n 的不断增大，上述时间复杂度不断增大，算法的执行效率越低
+
+平均时间复杂度和最坏时间复杂度：
+
+- 平均时间复杂度是指所有可能的输入实例均以等概率出现的情况下，该算法的运行时间。
+
+- 最坏情况下的时间复杂度称最坏时间复杂度。 一般讨论的时间复杂度均是最坏情况下的时间复杂度。这样做的原因是：最坏情况下的时间复杂度是算法在任何输入实例上运行时间的界限，这就保证了算法的运行时间不会比最坏情况更长。
+
+- 平均时间复杂度和最坏时间复杂度是否一致，和算法有关。
+
+   <img src="https://ftp.bmp.ovh/imgs/2020/09/5787bfba28206185.png" style="zoom:50%;" /> 
+
+### 4、算法的空间复杂度
+
+- 类似于时间复杂度的讨论，一个算法的空间复杂度(Space Complexity)定义为该算法所耗费的存储空间，它也是问题规模 n 的函数。
+- 空间复杂度(Space Complexity)是对一个算法在运行过程中临时占用存储空间大小的量度。有的算法需要占的
+  临时工作单元数与解决问题的规模 n 有关，它随着 n 的增大而增大，当 n 较大时，将占用较多的存储单元，例如快速排序和 归并排序算法, 基数排序就属于这种情况。
+- 在做算法分析时，主要讨论的是时间复杂度。 从用户使用体验上看 ， 更看重的程序执行的速度。一些缓存产品(redis, memcache)和算法(基数排序)。
+
+### 5、冒泡排序
+
+基本思想：
+
+​	通过对待排序序列从前向后（从下标较小的元素开始）, 依次比较相邻元素的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部，就象水底下的气泡一样逐渐向上冒。
+
+优化：
+
+​	因为排序的过程中，各元素不断接近自己的位置， 如果一趟比较下来没有进行过交换 ， 就说明序列有序，因此要在排序过程中设置一个标志 flag 判断元素是否进行过交换。从而减少不必要的比较。(这里说的优化，可以在冒泡排序写好后，在进行)。
+
+​	 <img src="https://ftp.bmp.ovh/imgs/2020/09/929e3936ef87064e.png" style="zoom: 80%;" /> 
+
+小结上面的图解过程:
+(1) 一共进行 数组的大小-1 次 大的循环
+(2)每一趟排序的次数在逐渐的减少
+(3) 如果我们发现在某趟排序中，没有发生一次交换， 可以提前结束冒泡排序。这个就是优化
+
+~~~ java
+package com.mace.sort;
+
+import java.util.Arrays;
+
+/**
+ * 冒泡排序：
+ * 每相邻的两个元素之间进行比较交换，一轮下来，就得到最大或最小的元素
+ * 比较数组长度-1轮，因为剩最后一个元素时，再不用比较。
+ * 80000数据 排序耗时：12459.0毫秒
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-02 10:00
+ */
+public class BubbleSort {
+    public static void main(String[] args) {
+        //int[] arr = new int[]{3, 9, -1, 10, 20};
+
+        int [] arr = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            arr[i] =(int)(Math.random()*80000);
+        }
+
+        double start = System.currentTimeMillis();
+
+        bubbleSort(arr);
+
+        double end = System.currentTimeMillis();
+
+        System.out.println("耗时："+(end-start)+"毫秒");
+
+
+    }
+
+    public static void bubbleSort(int [] arr){
+        /**
+         * 定义零时变量用于交换
+         *  外层循环控制比较的轮数
+         *  内层循环控制每两个元素之间的比较
+         */
+        int temp;
+
+        /**
+         * 定义标志位，记录是否进行交换
+         */
+        boolean falg = false;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int k = 0; k < arr.length - 1 - i; k++) {
+                if (arr[k] > arr[k + 1]) {
+                    falg = true;
+                    temp = arr[k + 1];
+                    arr[k + 1] = arr[k];
+                    arr[k] = temp;
+                }
+            }
+            //System.out.println("第" + (i + 1) + "轮比较");
+            //System.out.println(Arrays.toString(arr));
+
+            /**
+             * 如果进行了交换则将flag进行重置
+             * 如果一轮后没有进行交换，则从数组已有序，结束循环即可。
+             */
+            if (falg) {
+                falg = false;
+            } else {
+                break;
+            }
+        }
+    }
+}
+
+~~~
 
