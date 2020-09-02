@@ -2676,10 +2676,10 @@ public class BaHuangHou {
 - 一般情况下， 算法中的基本操作语句的重复执行次数是问题规模 n 的某个函数，用 T(n)表示，若有某个辅
   助函数 f(n)，使得当 n 趋近于无穷大时，T(n) / f(n) 的极限值为不等于零的常数，则称 f(n)是 T(n)的同数量级函数。记作 T(n)= Ｏ( f(n) )，称Ｏ( f(n) ) 为算法的渐进时间复杂度，简称时间复杂度。
 
--  T(n) 不同，但时间复杂度可能相同。 如：T(n)=n²+7n+6 与 T(n)=3n²+2n+2 它们的 T(n) 不同，但时间复杂
+- T(n) 不同，但时间复杂度可能相同。 如：T(n)=n²+7n+6 与 T(n)=3n²+2n+2 它们的 T(n) 不同，但时间复杂
   度相同，都为 O(n² )。
 
--  计算时间复杂度的方法：
+- 计算时间复杂度的方法：
 
   ​	用常数 1 代替运行时间中的所有加法常数 T(n)=n²+7n+6 => T(n)=n²+7n+1
 
@@ -2705,7 +2705,7 @@ public class BaHuangHou {
 
   - 指数阶 O(2^n)
 
-     <img src="https://ftp.bmp.ovh/imgs/2020/09/2d05a5c5da28f179.png" style="zoom:50%;" /> 
+    <img src="https://ftp.bmp.ovh/imgs/2020/09/2d05a5c5da28f179.png" style="zoom:50%;" /> 
 
 说明：常见的算法时间复杂度由小到大依次为：Ο(1)＜Ο(log2n)＜Ο(n)＜Ο(nlog2n)＜Ο(n2)＜Ο(n3)＜ Ο(nk) ＜
 Ο(2n) ，随着问题规模 n 的不断增大，上述时间复杂度不断增大，算法的执行效率越低
@@ -2718,7 +2718,7 @@ public class BaHuangHou {
 
 - 平均时间复杂度和最坏时间复杂度是否一致，和算法有关。
 
-   <img src="https://ftp.bmp.ovh/imgs/2020/09/5787bfba28206185.png" style="zoom:50%;" /> 
+  <img src="https://ftp.bmp.ovh/imgs/2020/09/5787bfba28206185.png" style="zoom:50%;" /> 
 
 ### 4、算法的空间复杂度
 
@@ -2813,6 +2813,427 @@ public class BubbleSort {
                 break;
             }
         }
+    }
+}
+
+~~~
+
+### 6、选择排序
+
+概念：
+
+​		选择式排序也属于内部排序法，是从欲排序的数据中，按指定的规则选出某一元素，再依规定交换位置后达到排序的目的。
+
+排序思想:
+
+​		选择排序（select sorting）也是一种简单的排序方法。它的基本思想是：第一次从 arr[0]~arr[n-1]中选取最小值，与 arr[0]交换，第二次从 arr[1]~arr[n-1]中选取最小值，与 arr[1]交换，第三次从 arr[2]~arr[n-1]中选取最小值，与 arr[2]交换，…，第 i 次从 arr[i-1]~arr[n-1]中选取最小值，与 arr[i-1]交换，…, 第 n-1 次从 arr[n-2]~arr[n-1]中选取最小值，与 arr[n-2]交换，总共通过 n-1 次，得到一个按排序码从小到大排列的有序序列。
+
+ <img src="https://ftp.bmp.ovh/imgs/2020/09/703c8f45ec958d4a.png" style="zoom:50%;" /> 
+
+~~~ java
+package com.mace.sort;
+
+import java.util.Arrays;
+
+/**
+ * 选择排序
+ * 假设没轮的第一个元素为最小或最大值，与后面的每一个元素进行比较
+ * 根据大小进行交换，交换数组长度-1轮，最后一个元素不用比较。
+ * 80000数据 排序 耗时:2690.0毫秒
+ *
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-02 11:21
+ */
+public class SelectSort {
+    public static void main(String[] args) {
+        //int [] arr = new int[]{101, 34, 119, 1, -1, 90, 123};
+        int[] arr = new int[80000];
+
+        for (int i = 0; i < 80000; i++) {
+            arr[i] = (int) (Math.random() * 80000);
+        }
+
+        double strat = System.currentTimeMillis();
+
+        selectSort(arr);
+
+        double end = System.currentTimeMillis();
+
+        System.out.println("耗时:" + (end - strat) + "毫秒");
+
+    }
+
+    private static void selectSort(int[] arr) {
+
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            int miniIndex = i;
+            int mini = arr[i];
+
+            for (int k = i + 1; k < arr.length; k++) {
+                if (arr[k] > mini) {
+                    miniIndex = k;
+                    mini = arr[k];
+                }
+            }
+            if (miniIndex != i) {
+                arr[miniIndex] = arr[i];
+                arr[i] = mini;
+
+            }
+        }
+
+        /**
+         * 比较耗时 
+         */
+       /* for (int i = 0; i < arr.length - 1; i++) {
+            for (int k = i + 1; k < arr.length; k++) {
+                if (arr[i] > arr[k]) {
+                    int temp = arr[k];
+                    arr[k] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }*/
+    }
+}
+
+~~~
+
+### 7、插入排序
+
+概念：
+
+​	插入式排序属于内部排序法，是对于欲排序的元素以插入的方式找寻该元素的适当位置，以达到排序的目的。
+
+思想：
+
+​	插入排序（Insertion Sorting）的基本思想是：把 把 n 个待排序的元素看成为一个有序表和一个无序表，开始时 有序表中只包含一个元素，无序表中包含有 n-1 个元素，排序过程中每次从无序表中取出第一个元素，把它的排
+序码依次与有序表元素的排序码进行比较，将它插入到有序表中的适当位置，使之成为新的有序表。
+
+~~~ java
+package com.mace.sort;
+
+import java.util.Arrays;
+
+/**
+ * 插入排序
+ *  把第一个元素认为为有序列表，剩余元素认为为无序列表
+ *  取出无序列表中的元素，添加到有序列表的合适位置
+ *
+ *  当前元素和它前面的元素进行比较，如果按升序，当前元素小于
+ *  它前面的元素，则进行位置交换，继续向前比较，直到找到当前元素
+ *  大于它前面的元素的位置，即为正确位置。
+ *
+ *  耗时：1511.0毫秒
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-02 14:30
+ */
+public class InsertSort {
+    public static void main(String[] args) {
+        //int [] arr = {101, 34, 119, 1, -1, 89};
+
+        int [] arr = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            arr[i] =(int)(Math.random()*80000);
+        }
+
+        double start = System.currentTimeMillis();
+
+        insertSort2(arr);
+
+        double end = System.currentTimeMillis();
+        System.out.println("耗时："+(end-start)+"毫秒");
+
+        //System.out.println(Arrays.toString(arr));
+    }
+
+    private static void insertSort(int[] arr) {
+        int insertVal = 0;
+        int insertIndex = 0;
+        for(int i = 1 ; i < arr.length ; i++){
+
+            insertVal = arr[i];
+            /**
+             * 即 arr[1]的前面这个数的下标
+             *  insertIndex >= 0 保证在给insertVal找插入位置，不越界
+             *  insertVal < arr[insertIndex] 待插入的数，还没有找到插入位置
+             *  就需要将 arr[insertIndex] 后移
+             *  insertVal待插入的值
+             *  有序列表中的比较的值
+             *
+             */
+            insertIndex = i - 1 ;
+            while (insertIndex >= 0 && insertVal < arr[insertIndex]){
+                arr[insertIndex+1] = arr[insertIndex];
+                insertIndex--;
+            }
+            arr[insertIndex + 1] = insertVal;
+        }
+    }
+
+    private static void insertSort2(int[] arr) {
+        for(int i = 1 ; i < arr.length;i++){
+            int j = i;
+            while (j>0){
+                if(arr[j] < arr[j-1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                    j--;
+                }else{
+                    break;
+                }
+            }
+        }
+    }
+}
+~~~
+
+### 8、希尔排序
+
+简单插入排序存在的问题：
+
+​	当需要插入的数是较小的数时， 后移的次数明显增多，对 效率有影响。
+
+概念：
+
+​	希尔排序是希尔（Donald Shell）于 1959 年提出的一种排序算法。希尔排序也是一种插入排序，它是简单插入排序经过改进之后的一个更高效的版本，也称为缩小增量排序。
+
+​	希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含
+
+的关键词越来越多， 当增量减至 1 时，整个文件恰被分成一组，算法便终止。
+
+  ![](https://ftp.bmp.ovh/imgs/2020/09/7910d98f78ee1d22.png) 
+
+~~~ java
+package com.mace.sort;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+/**
+ * 希尔排序
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-02 15:33
+ */
+public class ShellSort {
+    public static void main(String[] args) {
+        //int[] arr = { 8, 9, 1, 7, 2, 3, 5, 4, 6, 0 };
+        // 创建要给80000个的随机的数组
+        int[] arr = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            arr[i] = (int) (Math.random() * 80000); // 生成一个[0, 8000000) 数
+        }
+
+        System.out.println("排序前");
+        Date data1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date1Str = simpleDateFormat.format(data1);
+        System.out.println("排序前的时间是=" + date1Str);
+
+        //shellSort(arr); //交换式
+        shellSort2(arr);//移位方式
+
+        Date data2 = new Date();
+        String date2Str = simpleDateFormat.format(data2);
+        System.out.println("排序前的时间是=" + date2Str);
+
+        //System.out.println(Arrays.toString(arr));
+    }
+
+    // 使用逐步推导的方式来编写希尔排序
+    // 希尔排序时， 对有序序列在插入时采用交换法,
+    // 思路(算法) ===> 代码
+    public static void shellSort(int[] arr) {
+        int temp = 0;
+        int count = 0;
+        // 根据前面的逐步分析，使用循环处理
+        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < arr.length; i++) {
+                // 遍历各组中所有的元素(共gap组，每组有个元素), 步长gap
+                for (int j = i - gap; j >= 0; j -= gap) {
+                    // 如果当前元素大于加上步长后的那个元素，说明交换
+                    if (arr[j] > arr[j + gap]) {
+                        temp = arr[j];
+                        arr[j] = arr[j + gap];
+                        arr[j + gap] = temp;
+                    }
+                }
+            }
+            //System.out.println("希尔排序第" + (++count) + "轮 =" + Arrays.toString(arr));
+        }
+
+		/*
+		// 希尔排序的第1轮排序
+		// 因为第1轮排序，是将10个数据分成了 5组
+		for (int i = 5; i < arr.length; i++) {
+			// 遍历各组中所有的元素(共5组，每组有2个元素), 步长5
+			for (int j = i - 5; j >= 0; j -= 5) {
+				// 如果当前元素大于加上步长后的那个元素，说明交换
+				if (arr[j] > arr[j + 5]) {
+					temp = arr[j];
+					arr[j] = arr[j + 5];
+					arr[j + 5] = temp;
+				}
+			}
+		}
+
+		System.out.println("希尔排序1轮后=" + Arrays.toString(arr));//
+		// 希尔排序的第2轮排序
+		// 因为第2轮排序，是将10个数据分成了 5/2 = 2组
+		for (int i = 2; i < arr.length; i++) {
+			// 遍历各组中所有的元素(共5组，每组有2个元素), 步长5
+			for (int j = i - 2; j >= 0; j -= 2) {
+				// 如果当前元素大于加上步长后的那个元素，说明交换
+				if (arr[j] > arr[j + 2]) {
+					temp = arr[j];
+					arr[j] = arr[j + 2];
+					arr[j + 2] = temp;
+				}
+			}
+		}
+		System.out.println("希尔排序2轮后=" + Arrays.toString(arr));//
+		// 希尔排序的第3轮排序
+		// 因为第3轮排序，是将10个数据分成了 2/2 = 1组
+		for (int i = 1; i < arr.length; i++) {
+			// 遍历各组中所有的元素(共5组，每组有2个元素), 步长5
+			for (int j = i - 1; j >= 0; j -= 1) {
+				// 如果当前元素大于加上步长后的那个元素，说明交换
+				if (arr[j] > arr[j + 1]) {
+					temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+		System.out.println("希尔排序3轮后=" + Arrays.toString(arr));//
+		*/
+    }
+
+    //对交换式的希尔排序进行优化->移位法
+    public static void shellSort2(int[] arr) {
+
+        // 增量gap, 并逐步的缩小增量
+        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+            // 从第gap个元素，逐个对其所在的组进行直接插入排序
+            for (int i = gap; i < arr.length; i++) {
+                int j = i;
+                int temp = arr[j];
+                if (arr[j] < arr[j - gap]) {
+                    while (j - gap >= 0 && temp < arr[j - gap]) {
+                        //移动
+                        arr[j] = arr[j-gap];
+                        j -= gap;
+                    }
+                    //当退出while后，就给temp找到插入的位置
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+}
+~~~
+
+### 9、快速排序
+
+概念：
+
+​	快速排序（Quicksort）是对 冒泡排序的一种改进。基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排
+序， 整个排序过程可以递归进行，以此达到整个数据变成有序序列。
+
+~~~ java
+package com.mace.sort;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * 快速排序
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-02 17:06
+ */
+public class QuickSort {
+    public static void main(String[] args) {
+        //int[] arr = {-9,78,0,23,-567,70, -1,900, 4561};
+
+        //测试快排的执行速度
+        // 创建要给80000个的随机的数组
+        int[] arr = new int[8000000];
+        for (int i = 0; i < 8000000; i++) {
+            arr[i] = (int) (Math.random() * 8000000); // 生成一个[0, 8000000) 数
+        }
+
+        System.out.println("排序前");
+        Date data1 = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date1Str = simpleDateFormat.format(data1);
+        System.out.println("排序前的时间是=" + date1Str);
+
+        quickSort(arr, 0, arr.length-1);
+
+        Date data2 = new Date();
+        String date2Str = simpleDateFormat.format(data2);
+        System.out.println("排序前的时间是=" + date2Str);
+        //System.out.println("arr=" + Arrays.toString(arr));
+    }
+
+    public static void quickSort(int[] arr,int left, int right) {
+        int l = left; //左下标
+        int r = right; //右下标
+        //pivot 中轴值
+        int pivot = arr[(left + right) / 2];
+        int temp = 0; //临时变量，作为交换时使用
+        //while循环的目的是让比pivot 值小放到左边
+        //比pivot 值大放到右边
+        while( l < r) {
+            //在pivot的左边一直找,找到大于等于pivot值,才退出
+            while( arr[l] < pivot) {
+                l += 1;
+            }
+            //在pivot的右边一直找,找到小于等于pivot值,才退出
+            while(arr[r] > pivot) {
+                r -= 1;
+            }
+            //如果l >= r说明pivot 的左右两的值，已经按照左边全部是
+            //小于等于pivot值，右边全部是大于等于pivot值
+            if( l >= r) {
+                break;
+            }
+
+            //交换
+            temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+
+            //如果交换完后，发现这个arr[l] == pivot值 相等 r--， 前移
+            if(arr[l] == pivot) {
+                r -= 1;
+            }
+            //如果交换完后，发现这个arr[r] == pivot值 相等 l++， 后移
+            if(arr[r] == pivot) {
+                l += 1;
+            }
+        }
+
+        // 如果 l == r, 必须l++, r--, 否则为出现栈溢出
+        if (l == r) {
+            l += 1;
+            r -= 1;
+        }
+        //向左递归
+        if(left < r) {
+            quickSort(arr, left, r);
+        }
+        //向右递归
+        if(right > l) {
+            quickSort(arr, l, right);
+        }
+
+
     }
 }
 
