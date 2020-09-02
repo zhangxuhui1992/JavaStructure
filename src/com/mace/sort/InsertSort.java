@@ -11,7 +11,7 @@ import java.util.Arrays;
  *  它前面的元素，则进行位置交换，继续向前比较，直到找到当前元素
  *  大于它前面的元素的位置，即为正确位置。
  *
- *  耗时：1511.0毫秒
+ *  耗时：798.0毫秒
  * @author zhangxuhui
  * @email zxh_1633@163.com
  * @create 2020-09-02 14:30
@@ -27,7 +27,7 @@ public class InsertSort {
 
         double start = System.currentTimeMillis();
 
-        insertSort2(arr);
+        insertSort(arr);
 
         double end = System.currentTimeMillis();
         System.out.println("耗时："+(end-start)+"毫秒");
@@ -70,6 +70,18 @@ public class InsertSort {
                     break;
                 }
             }
+        }
+    }
+
+    private static void insertSort3(int[] arr) {
+        for(int i = 1 ; i < arr.length;i++){
+            int k = arr[i];
+            int j = i -1 ;
+            while (j>=0 && k < arr[j]){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = k;
         }
     }
 }
