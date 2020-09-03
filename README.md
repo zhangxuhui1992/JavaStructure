@@ -1076,6 +1076,7 @@ class HearNode{
         }
 
     }
+
 ~~~
 
 ### 3、练习：单链表中有效节点的个数
@@ -1101,6 +1102,7 @@ class HearNode{
 
         return length;
     }
+
 ~~~
 
 ### 4、查找单链表中的倒数第k个节点
@@ -1130,6 +1132,7 @@ class HearNode{
         }
         return temp;
     }
+
 ~~~
 
 ### 5、单链表的反转
@@ -1189,6 +1192,7 @@ class HearNode{
         head.setNext(newHead.getNext());
 
     }
+
 ~~~
 
 ### 6、单链表的逆序打印
@@ -1218,6 +1222,7 @@ class HearNode{
             System.out.println(stack.pop());
         }
     }
+
 ~~~
 
 ### 7、双向链表
@@ -1532,6 +1537,7 @@ class HearNode2{
     }
 }
 
+
 ~~~
 
 ### 8、单向环形链表
@@ -1716,6 +1722,7 @@ class Boy{
                 '}';
     }
 }
+
  ~~~
 
 ## 七、栈
@@ -1868,6 +1875,7 @@ class ArrayStack{
     }
 
 }
+
 
 ~~~
 
@@ -2087,6 +2095,7 @@ class ArrayStack2{
     }
 
 }
+
 ~~~
 
 ### 5、逆波兰计算器
@@ -2170,6 +2179,7 @@ public class PolandNotation {
         return Integer.parseInt(stack.pop());
     }
 }
+
 
 ~~~
 
@@ -2380,6 +2390,7 @@ class Operation {
 
 }
 
+
 ~~~
 
 ## 八、递归
@@ -2525,6 +2536,7 @@ public class MiGong {
         }
     }
 }
+
 
 ~~~
 
@@ -2816,6 +2828,7 @@ public class BubbleSort {
     }
 }
 
+
 ~~~
 
 ### 6、选择排序
@@ -2898,6 +2911,7 @@ public class SelectSort {
         }*/
     }
 }
+
 
 ~~~
 
@@ -2990,6 +3004,7 @@ public class InsertSort {
         }
     }
 }
+
 ~~~
 
 ### 8、希尔排序
@@ -3006,7 +3021,7 @@ public class InsertSort {
 
 的关键词越来越多， 当增量减至 1 时，整个文件恰被分成一组，算法便终止。
 
-  ![](https://ftp.bmp.ovh/imgs/2020/09/7910d98f78ee1d22.png) 
+  <img src="https://ftp.bmp.ovh/imgs/2020/09/7910d98f78ee1d22.png" style="zoom:50%;" /> 
 
 ~~~ java
 package com.mace.sort;
@@ -3135,6 +3150,7 @@ public class ShellSort {
         }
     }
 }
+
 ~~~
 
 ### 9、快速排序
@@ -3237,5 +3253,316 @@ public class QuickSort {
     }
 }
 
+
 ~~~
 
+### 10、归并排序
+
+介绍：
+
+​	归并排序（MERGE-SORT）是利用归并的思想实现的排序方法，该算法采用经典的分治（divide-and-conquer）策略（分治法将问题分(divide)成一些 小的问题然后递归求解，而治(conquer)的阶段则将分的阶段得到的各答案"修补"在一起，即分而治之)。
+
+ ![](https://ftp.bmp.ovh/imgs/2020/09/a2e405998479c0db.png) 
+
+~~~ java
+package com.mace.sort;
+
+/**
+ * 归并排序：
+ * 分而治之 分解-排序-合并
+ *
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-03 9:24
+ */
+public class MergetSort {
+    public static void main(String[] args) {
+        //int arr[] = { 8, 4, 5, 7, 1, 3, 6, 2 }; //
+
+        //测试快排的执行速度
+        // 创建要给80000个的随机的数组
+        int[] arr = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            arr[i] = (int) (Math.random() * 800000); // 生成一个[0, 8000000) 数
+        }
+        double start = System.currentTimeMillis();
+        int temp[] = new int[arr.length]; //归并排序需要一个额外空间
+        mergeSort(arr, 0, arr.length - 1, temp);
+        double end = System.currentTimeMillis();
+
+        System.out.println("耗时："+(end-start)+"毫秒");
+
+        //System.out.println("归并排序后=" + Arrays.toString(arr));
+    }
+
+
+    //分+合方法
+    public static void mergeSort(int[] arr, int left, int right, int[] temp) {
+        if (left < right) {
+            int mid = (left + right) / 2; //中间索引
+            //向左递归进行分解
+            mergeSort(arr, left, mid, temp);
+            //向右递归进行分解
+            mergeSort(arr, mid + 1, right, temp);
+            //合并
+            merge(arr, left, mid, right, temp);
+        }
+    }
+
+    //合并的方法
+
+    /**
+     * @param arr   排序的原始数组
+     * @param left  左边有序序列的初始索引
+     * @param mid   中间索引
+     * @param right 右边索引
+     * @param temp  做中转的数组
+     */
+    public static void merge(int[] arr, int left, int mid, int right, int[] temp) {
+
+        int i = left; // 初始化i, 左边有序序列的初始索引
+        int j = mid + 1; //初始化j, 右边有序序列的初始索引
+        int t = 0; // 指向temp数组的当前索引
+
+        //(一)
+        //先把左右两边(有序)的数据按照规则填充到temp数组
+        //直到左右两边的有序序列，有一边处理完毕为止
+        while (i <= mid && j <= right) {//继续
+            //如果左边的有序序列的当前元素，小于等于右边有序序列的当前元素
+            //即将左边的当前元素，填充到 temp数组
+            //然后 t++, i++
+            if (arr[i] <= arr[j]) {
+                temp[t] = arr[i];
+                t += 1;
+                i += 1;
+            } else { //反之,将右边有序序列的当前元素，填充到temp数组
+                temp[t] = arr[j];
+                t += 1;
+                j += 1;
+            }
+        }
+
+        //(二)
+        //把有剩余数据的一边的数据依次全部填充到temp
+        while (i <= mid) { //左边的有序序列还有剩余的元素，就全部填充到temp
+            temp[t] = arr[i];
+            t += 1;
+            i += 1;
+        }
+
+        while (j <= right) { //右边的有序序列还有剩余的元素，就全部填充到temp
+            temp[t] = arr[j];
+            t += 1;
+            j += 1;
+        }
+
+
+        //(三)
+        //将temp数组的元素拷贝到arr
+        //注意，并不是每次都拷贝所有
+        t = 0;
+        int tempLeft = left; //
+        //第一次合并 tempLeft = 0 , right = 1 //  tempLeft = 2  right = 3 // tL=0 ri=3
+        //最后一次 tempLeft = 0  right = 7
+        while (tempLeft <= right) {
+            arr[tempLeft] = temp[t];
+            t += 1;
+            tempLeft += 1;
+        }
+
+    }
+}
+
+
+~~~
+
+### 11、基数排序（桶排序）
+
+说明：
+
+​		基数排序（radix sort）属于“分配式排序”（distribution sort），又称“桶子法”（bucket sort）或 bin sort，顾名思义，它是通过键值的各个位的值，将要排序的元素分配至某些“桶”中，达到排序的作用。基数排序法是属于稳定性的排序，基数排序法的是效率高的 稳定性排序法。基数排序(Radix Sort)是桶排序的扩展。基数排序是 1887 年赫尔曼·何乐礼发明的。它是这样实现的：将整数按位数切割成不同的数字，然后按每个位数分别比较。
+
+思想：将所有待比较数值统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。
+
+ ![](https://ftp.bmp.ovh/imgs/2020/09/94fa25edee5e63f1.png) 
+
+ ![](https://ftp.bmp.ovh/imgs/2020/09/9f900a95d037f51b.png) 
+
+ <img src="https://ftp.bmp.ovh/imgs/2020/09/2b0df73502afda01.png" style="zoom:50%;" /> 
+
+~~~ java
+package com.mace.sort;
+
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+/**
+ * 基数排序
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-03 11:05
+ */
+public class RadixSort {
+    public static void main(String[] args) {
+        //int arr[] = {53, 3, 542, 748, 14, 214};
+
+        // 80000000 * 11 * 4 / 1024 / 1024 / 1024 =3.3G
+		int[] arr = new int[8000000];
+		for (int i = 0; i < 8000000; i++) {
+			arr[i] = (int) (Math.random() * 8000000); // 生成一个[0, 8000000) 数
+		}
+        double start = System.currentTimeMillis();
+        radixSort(arr);
+        double end = System.currentTimeMillis();
+        System.out.println("耗时："+(end-start)+"毫秒");
+
+        //System.out.println("基数排序后 " + Arrays.toString(arr));
+
+    }
+    //基数排序方法
+    public static void radixSort(int[] arr) {
+
+        //根据前面的推导过程，我们可以得到最终的基数排序代码
+
+        //1. 得到数组中最大的数的位数
+        int max = arr[0]; //假设第一数就是最大数
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        //得到最大数是几位数
+        int maxLength = (max + "").length();
+
+        //定义一个二维数组，表示10个桶, 每个桶就是一个一维数组
+        //说明
+        //1. 二维数组包含10个一维数组
+        //2. 为了防止在放入数的时候，数据溢出，则每个一维数组(桶)，大小定为arr.length
+        //3. 名明确，基数排序是使用空间换时间的经典算法
+        int[][] bucket = new int[10][arr.length];
+
+        //为了记录每个桶中，实际存放了多少个数据,我们定义一个一维数组来记录各个桶的每次放入的数据个数
+        //可以这里理解
+        //比如：bucketElementCounts[0] , 记录的就是  bucket[0] 桶的放入数据个数
+        int[] bucketElementCounts = new int[10];
+
+        //这里我们使用循环将代码处理
+
+        for (int i = 0, n = 1; i < maxLength; i++, n *= 10) {
+            //(针对每个元素的对应位进行排序处理)， 第一次是个位，第二次是十位，第三次是百位..
+            for (int j = 0; j < arr.length; j++) {
+                //取出每个元素的对应位的值
+                int digitOfElement = arr[j] / n % 10;
+                //放入到对应的桶中
+                bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];
+                bucketElementCounts[digitOfElement]++;
+            }
+            //按照这个桶的顺序(一维数组的下标依次取出数据，放入原来数组)
+            int index = 0;
+            //遍历每一桶，并将桶中是数据，放入到原数组
+            for (int k = 0; k < bucketElementCounts.length; k++) {
+                //如果桶中，有数据，我们才放入到原数组
+                if (bucketElementCounts[k] != 0) {
+                    //循环该桶即第k个桶(即第k个一维数组), 放入
+                    for (int l = 0; l < bucketElementCounts[k]; l++) {
+                        //取出元素放入到arr
+                        arr[index++] = bucket[k][l];
+                    }
+                }
+                //第i+1轮处理后，需要将每个 bucketElementCounts[k] = 0 ！！！！
+                bucketElementCounts[k] = 0;
+
+            }
+            //System.out.println("第"+(i+1)+"轮，对个位的排序处理 arr =" + Arrays.toString(arr));
+
+        }
+		/*
+		//第1轮(针对每个元素的个位进行排序处理)
+		for(int j = 0; j < arr.length; j++) {
+			//取出每个元素的个位的值
+			int digitOfElement = arr[j] / 1 % 10;
+			//放入到对应的桶中
+			bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];
+			bucketElementCounts[digitOfElement]++;
+		}
+		//按照这个桶的顺序(一维数组的下标依次取出数据，放入原来数组)
+		int index = 0;
+		//遍历每一桶，并将桶中是数据，放入到原数组
+		for(int k = 0; k < bucketElementCounts.length; k++) {
+			//如果桶中，有数据，我们才放入到原数组
+			if(bucketElementCounts[k] != 0) {
+				//循环该桶即第k个桶(即第k个一维数组), 放入
+				for(int l = 0; l < bucketElementCounts[k]; l++) {
+					//取出元素放入到arr
+					arr[index++] = bucket[k][l];
+				}
+			}
+			//第l轮处理后，需要将每个 bucketElementCounts[k] = 0 ！！！！
+			bucketElementCounts[k] = 0;
+		}
+		System.out.println("第1轮，对个位的排序处理 arr =" + Arrays.toString(arr));
+		//==========================================
+
+		//第2轮(针对每个元素的十位进行排序处理)
+		for (int j = 0; j < arr.length; j++) {
+			// 取出每个元素的十位的值
+			int digitOfElement = arr[j] / 10  % 10; //748 / 10 => 74 % 10 => 4
+			// 放入到对应的桶中
+			bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];
+			bucketElementCounts[digitOfElement]++;
+		}
+		// 按照这个桶的顺序(一维数组的下标依次取出数据，放入原来数组)
+		index = 0;
+		// 遍历每一桶，并将桶中是数据，放入到原数组
+		for (int k = 0; k < bucketElementCounts.length; k++) {
+			// 如果桶中，有数据，我们才放入到原数组
+			if (bucketElementCounts[k] != 0) {
+				// 循环该桶即第k个桶(即第k个一维数组), 放入
+				for (int l = 0; l < bucketElementCounts[k]; l++) {
+					// 取出元素放入到arr
+					arr[index++] = bucket[k][l];
+				}
+			}
+			//第2轮处理后，需要将每个 bucketElementCounts[k] = 0 ！！！！
+			bucketElementCounts[k] = 0;
+		}
+		System.out.println("第2轮，对个位的排序处理 arr =" + Arrays.toString(arr));
+
+		//第3轮(针对每个元素的百位进行排序处理)
+		for (int j = 0; j < arr.length; j++) {
+			// 取出每个元素的百位的值
+			int digitOfElement = arr[j] / 100 % 10; // 748 / 100 => 7 % 10 = 7
+			// 放入到对应的桶中
+			bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];
+			bucketElementCounts[digitOfElement]++;
+		}
+		// 按照这个桶的顺序(一维数组的下标依次取出数据，放入原来数组)
+		index = 0;
+		// 遍历每一桶，并将桶中是数据，放入到原数组
+		for (int k = 0; k < bucketElementCounts.length; k++) {
+			// 如果桶中，有数据，我们才放入到原数组
+			if (bucketElementCounts[k] != 0) {
+				// 循环该桶即第k个桶(即第k个一维数组), 放入
+				for (int l = 0; l < bucketElementCounts[k]; l++) {
+					// 取出元素放入到arr
+					arr[index++] = bucket[k][l];
+				}
+			}
+			//第3轮处理后，需要将每个 bucketElementCounts[k] = 0 ！！！！
+			bucketElementCounts[k] = 0;
+		}
+		System.out.println("第3轮，对个位的排序处理 arr =" + Arrays.toString(arr)); */
+    }
+}
+
+~~~
+
+说明：
+
+- 基数排序是对传统桶排序的扩展，速度很快.
+- 基数排序是经典的空间换时间的方式，占用内存很大, 当对海量数据排序时，容易造成 OutOfMemoryError 。
+- 基数排序时稳定的。[注:假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些
+  记录的相对次序保持不变，即在原序列中，r[i]=r[j]，且 r[i]在 r[j]之前，而在排序后的序列中，r[i]仍在 r[j]之前，
+  则称这种排序算法是稳定的；否则称为不稳定的]。
+- 负数的数组，我们不用基数排序来进行排序, 如果要支持负数，参考: https://code.i-harness.com/zh-CN/q/e98fa9
+
+ <img src="https://ftp.bmp.ovh/imgs/2020/09/f2f234c79ca56d2e.png" style="zoom: 50%;" /> 
