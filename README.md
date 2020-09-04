@@ -1076,7 +1076,6 @@ class HearNode{
         }
 
     }
-
 ~~~
 
 ### 3、练习：单链表中有效节点的个数
@@ -1102,7 +1101,6 @@ class HearNode{
 
         return length;
     }
-
 ~~~
 
 ### 4、查找单链表中的倒数第k个节点
@@ -1132,7 +1130,6 @@ class HearNode{
         }
         return temp;
     }
-
 ~~~
 
 ### 5、单链表的反转
@@ -1192,7 +1189,6 @@ class HearNode{
         head.setNext(newHead.getNext());
 
     }
-
 ~~~
 
 ### 6、单链表的逆序打印
@@ -1222,7 +1218,6 @@ class HearNode{
             System.out.println(stack.pop());
         }
     }
-
 ~~~
 
 ### 7、双向链表
@@ -1537,7 +1532,6 @@ class HearNode2{
     }
 }
 
-
 ~~~
 
 ### 8、单向环形链表
@@ -1722,7 +1716,6 @@ class Boy{
                 '}';
     }
 }
-
  ~~~
 
 ## 七、栈
@@ -1875,7 +1868,6 @@ class ArrayStack{
     }
 
 }
-
 
 ~~~
 
@@ -2095,7 +2087,6 @@ class ArrayStack2{
     }
 
 }
-
 ~~~
 
 ### 5、逆波兰计算器
@@ -2179,7 +2170,6 @@ public class PolandNotation {
         return Integer.parseInt(stack.pop());
     }
 }
-
 
 ~~~
 
@@ -2390,7 +2380,6 @@ class Operation {
 
 }
 
-
 ~~~
 
 ## 八、递归
@@ -2537,7 +2526,6 @@ public class MiGong {
     }
 }
 
-
 ~~~
 
 ### 5、八皇后问题
@@ -2647,7 +2635,6 @@ public class BaHuangHou {
     }
 
 }
-
 
 ~~~
 
@@ -2829,7 +2816,6 @@ public class BubbleSort {
     }
 }
 
-
 ~~~
 
 ### 6、选择排序
@@ -2912,7 +2898,6 @@ public class SelectSort {
         }*/
     }
 }
-
 
 ~~~
 
@@ -3005,7 +2990,6 @@ public class InsertSort {
         }
     }
 }
-
 ~~~
 
 ### 8、希尔排序
@@ -3151,7 +3135,6 @@ public class ShellSort {
         }
     }
 }
-
 ~~~
 
 ### 9、快速排序
@@ -3253,7 +3236,6 @@ public class QuickSort {
 
     }
 }
-
 
 ~~~
 
@@ -3373,7 +3355,6 @@ public class MergetSort {
 
     }
 }
-
 
 ~~~
 
@@ -3554,7 +3535,6 @@ public class RadixSort {
 		System.out.println("第3轮，对个位的排序处理 arr =" + Arrays.toString(arr)); */
     }
 }
-
 
 ~~~
 
@@ -3810,4 +3790,723 @@ public class InsertSecach {
 
 - 对于数据量较大，关键字分布比较均匀的查找表来说，采用插值查找, 速度较快.
 - 关键字分布不均匀的情况下，该方法不一定比折半查找要好
+
+### 4、斐波那契（黄金分割法）查找
+
+介绍：
+
+​	黄金分割点是指把一条线段分割为两部分，使其中一部分与全长之比等于另一部分与这部分之比。取其前三位数字的近似值是 0.618。由于按此比例设计的造型十分美丽，因此称为黄金分割，也称为中外比。这是一个神
+奇的数字，会带来意向不大的效果。
+
+​	斐波那契查找原理与前两种相似，仅仅改变了中间结点（mid）的位置，mid 不再是中间或插值得到，而是位
+于黄金分割点附近，即 mid=low+F(k-1)-1（F 代表斐波那契数列），如下图所示
+
+ <img src="https://ftp.bmp.ovh/imgs/2020/09/d4d5612b96358215.png" style="zoom:50%;" /> 
+
+~~~ java
+package com.mace.search;
+import java.util.Arrays;
+/**
+ * 斐波那契查找
+ *    前提是有序数列
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-04 10:07
+ */
+public class FbiSearch {
+    public static int maxSize = 20;
+    public static void main(String[] args) {
+        int [] arr = {1,8, 10, 89, 1000, 1234};
+        System.out.println("index=" + fibSearch(arr, 10));// 0
+    }
+
+    //因为后面我们mid=low+F(k-1)-1，需要使用到斐波那契数列，因此我们需要先获取到一个斐波那契数列
+    //非递归方法得到一个斐波那契数列
+    public static int[] fib() {
+        int[] f = new int[maxSize];
+        f[0] = 1;
+        f[1] = 1;
+        for (int i = 2; i < maxSize; i++) {
+            f[i] = f[i - 1] + f[i - 2];
+        }
+        return f;
+    }
+
+    //编写斐波那契查找算法
+    //使用非递归的方式编写算法
+    /**
+     *
+     * @param a  数组
+     * @param key 我们需要查找的关键码(值)
+     * @return 返回对应的下标，如果没有-1
+     */
+    public static int fibSearch(int[] a, int key) {
+        int low = 0;
+        int high = a.length - 1;
+        int k = 0; //表示斐波那契分割数值的下标
+        int mid = 0; //存放mid值
+        int f[] = fib(); //获取到斐波那契数列
+        //获取到斐波那契分割数值的下标
+        while(high > f[k] - 1) {
+            k++;
+        }
+        //因为 f[k] 值 可能大于 a 的 长度，因此我们需要使用Arrays类，构造一个新的数组，并指向temp[]
+        //不足的部分会使用0填充
+        int[] temp = Arrays.copyOf(a, f[k]);
+        //实际上需求使用a数组最后的数填充 temp
+        //举例:
+        //temp = {1,8, 10, 89, 1000, 1234, 0, 0}  => {1,8, 10, 89, 1000, 1234, 1234, 1234,}
+        for(int i = high + 1; i < temp.length; i++) {
+            temp[i] = a[high];
+        }
+
+        // 使用while来循环处理，找到我们的数 key
+        while (low <= high) { // 只要这个条件满足，就可以找
+            mid = low + f[k - 1] - 1;
+            if(key < temp[mid]) { //我们应该继续向数组的前面查找(左边)
+                high = mid - 1;
+                //为甚是 k--
+                //说明
+                //1. 全部元素 = 前面的元素 + 后边元素
+                //2. f[k] = f[k-1] + f[k-2]
+                //因为 前面有 f[k-1]个元素,所以可以继续拆分 f[k-1] = f[k-2] + f[k-3]
+                //即 在 f[k-1] 的前面继续查找 k--
+                //即下次循环 mid = f[k-1-1]-1
+                k--;
+            } else if ( key > temp[mid]) { // 我们应该继续向数组的后面查找(右边)
+                low = mid + 1;
+                //为什么是k -=2
+                //说明
+                //1. 全部元素 = 前面的元素 + 后边元素
+                //2. f[k] = f[k-1] + f[k-2]
+                //3. 因为后面我们有f[k-2] 所以可以继续拆分 f[k-1] = f[k-3] + f[k-4]
+                //4. 即在f[k-2] 的前面进行查找 k -=2
+                //5. 即下次循环 mid = f[k - 1 - 2] - 1
+                k -= 2;
+            } else { //找到
+                //需要确定，返回的是哪个下标
+                if(mid <= high) {
+                    return mid;
+                } else {
+                    return high;
+                }
+            }
+        }
+        return -1;
+    }
+}
+~~~
+
+## 十一、哈希表
+
+		### 1、概念
+
+散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
+
+### 2、google 公司的一个上机题
+
+​	有一个公司,当有新的员工来报道时,要求将该员工的信息加入(id,性别,年龄,名字,住址..),当输入该员工的 id 时,
+
+要求查找到该员工的 所有信息.
+
+ <img src="https://ftp.bmp.ovh/imgs/2020/09/e66f5a29af0a82b3.png" style="zoom:50%;" /> 
+
+~~~ java
+package com.atguigu.hashtab;
+import java.util.Scanner;
+public class HashTabDemo {
+	public static void main(String[] args) {
+		
+		//创建哈希表
+		HashTab hashTab = new HashTab(7);
+		//写一个简单的菜单
+		String key = "";
+		Scanner scanner = new Scanner(System.in);
+		while(true) {
+			System.out.println("add:  添加雇员");
+			System.out.println("list: 显示雇员");
+			System.out.println("find: 查找雇员");
+			System.out.println("exit: 退出系统");
+			
+			key = scanner.next();
+			switch (key) {
+			case "add":
+				System.out.println("输入id");
+				int id = scanner.nextInt();
+				System.out.println("输入名字");
+				String name = scanner.next();
+				//创建 雇员
+				Emp emp = new Emp(id, name);
+				hashTab.add(emp);
+				break;
+			case "list":
+				hashTab.list();
+				break;
+			case "find":
+				System.out.println("请输入要查找的id");
+				id = scanner.nextInt();
+				hashTab.findEmpById(id);
+				break;
+			case "exit":
+				scanner.close();
+				System.exit(0);
+			default:
+				break;
+			}
+		}
+	}
+}
+
+//创建HashTab 管理多条链表
+class HashTab {
+	private EmpLinkedList[] empLinkedListArray;
+	private int size; //表示有多少条链表
+	
+	//构造器
+	public HashTab(int size) {
+		this.size = size;
+		//初始化empLinkedListArray
+		empLinkedListArray = new EmpLinkedList[size];
+		//？留一个坑, 这时不要分别初始化每个链表
+		for(int i = 0; i < size; i++) {
+			empLinkedListArray[i] = new EmpLinkedList();
+		}
+	}
+	
+	//添加雇员
+	public void add(Emp emp) {
+		//根据员工的id ,得到该员工应当添加到哪条链表
+		int empLinkedListNO = hashFun(emp.id);
+		//将emp 添加到对应的链表中
+		empLinkedListArray[empLinkedListNO].add(emp);
+		
+	}
+	//遍历所有的链表,遍历hashtab
+	public void list() {
+		for(int i = 0; i < size; i++) {
+			empLinkedListArray[i].list(i);
+		}
+	}
+	
+	//根据输入的id,查找雇员
+	public void findEmpById(int id) {
+		//使用散列函数确定到哪条链表查找
+		int empLinkedListNO = hashFun(id);
+		Emp emp = empLinkedListArray[empLinkedListNO].findEmpById(id);
+		if(emp != null) {//找到
+			System.out.printf("在第%d条链表中找到 雇员 id = %d\n", (empLinkedListNO + 1), id);
+		}else{
+			System.out.println("在哈希表中，没有找到该雇员~");
+		}
+	}
+	
+	//编写散列函数, 使用一个简单取模法
+	public int hashFun(int id) {
+		return id % size;
+	}
+}
+
+//表示一个雇员
+class Emp {
+	public int id;
+	public String name;
+	public Emp next; //next 默认为 null
+	public Emp(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+}
+
+//创建EmpLinkedList ,表示链表
+class EmpLinkedList {
+	//头指针，执行第一个Emp,因此我们这个链表的head 是直接指向第一个Emp
+	private Emp head; //默认null
+	
+	//添加雇员到链表
+	//说明
+	//1. 假定，当添加雇员时，id 是自增长，即id的分配总是从小到大
+	//   因此我们将该雇员直接加入到本链表的最后即可
+	public void add(Emp emp) {
+		//如果是添加第一个雇员
+		if(head == null) {
+			head = emp;
+			return;
+		}
+		//如果不是第一个雇员，则使用一个辅助的指针，帮助定位到最后
+		Emp curEmp = head;
+		while(true) {
+			if(curEmp.next == null) {//说明到链表最后
+				break;
+			}
+			curEmp = curEmp.next; //后移
+		}
+		//退出时直接将emp 加入链表
+		curEmp.next = emp;
+	}
+	
+	//遍历链表的雇员信息
+	public void list(int no) {
+		if(head == null) { //说明链表为空
+			System.out.println("第 "+(no+1)+" 链表为空");
+			return;
+		}
+		System.out.print("第 "+(no+1)+" 链表的信息为");
+		Emp curEmp = head; //辅助指针
+		while(true) {
+			System.out.printf(" => id=%d name=%s\t", curEmp.id, curEmp.name);
+			if(curEmp.next == null) {//说明curEmp已经是最后结点
+				break;
+			}
+			curEmp = curEmp.next; //后移，遍历
+		}
+		System.out.println();
+	}
+	
+	//根据id查找雇员
+	//如果查找到，就返回Emp, 如果没有找到，就返回null
+	public Emp findEmpById(int id) {
+		//判断链表是否为空
+		if(head == null) {
+			System.out.println("链表为空");
+			return null;
+		}
+		//辅助指针
+		Emp curEmp = head;
+		while(true) {
+			if(curEmp.id == id) {//找到
+				break;//这时curEmp就指向要查找的雇员
+			}
+			//退出
+			if(curEmp.next == null) {//说明遍历当前链表没有找到该雇员
+				curEmp = null;
+				break;
+			}
+			curEmp = curEmp.next;//以后
+		}
+		return curEmp;
+	}
+}
+~~~
+
+## 十二、树结构
+
+### 1、为什么有树的存储结构
+
+-  数组存储方式的分析
+
+  ​	**优点**：通过 下标方式访问元素，速度快。对于有序数组，还可使用 二分查找提高检索速度。
+  ​	**缺点**：如果要检索具体某个值，或者 插入值( 按一定顺序) 会整体移动，效率较低
+
+- 链式存储方式的分析
+
+  ​	**优点**：在一定程度上对数组存储方式有优化(比如： 插入一个数值节点，只需要将插入节点，链接到链表中即可，删除效率也很好)。
+  ​	**缺点**：在进行 检索时，效率仍然较低，比如(检索某个值，需要从头节点开始遍历)
+
+- 树存储方式的分析
+
+  能提高数据 存储 ， 读取的效率, 比如利用 二叉排序树(Binary Sort Tree)，既可以保证数据的检索速度，同时也可以保证数据的 插入，删除，修改的速度。
+
+	### 2、二叉树
+
+#### 2.1 树的常用术语(结合示意图理解):
+
+​	1) 节点
+​	2) 根节点
+​	3) 父节点
+​	4) 子节点
+​	5) 叶子节点 (没有子节点的节点)
+​	6) 节点的权(节点值)
+​	7) 路径(从 root 节点找到该节点的路线)
+​	8) 层
+​	9) 子树
+​	10) 树的高度(最大层数)
+​	11) 森林 :多颗子树构成森林
+
+​	 <img src="https://ftp.bmp.ovh/imgs/2020/09/0b7932453aca96ec.png" style="zoom: 33%;" /> 
+
+#### 2.2 二叉树：
+
+- 树有很多种，每个节点 最多只能有两个子节点的一种形式称为二叉树。
+
+- 二叉树的子节点分为左节点和右节点
+
+- 如果该二叉树的所有 叶子节点都在 最后一层，并且结点总数= 2^n -1 , n 为层数，则我们称为满二叉树。
+
+   <img src="https://ftp.bmp.ovh/imgs/2020/09/465da285d590fc3c.png" style="zoom:50%;" /> 
+
+- 如果该二叉树的所有 叶子节点都在 最后一层或者 倒数第二层，而且最后一层的叶子节点在左边连续，倒数第二层的叶子节点在右边连续，我们称为完全二叉树
+
+ <img src="https://ftp.bmp.ovh/imgs/2020/09/1b8bd5a75ac83d71.png" style="zoom:50%;" /> 
+
+#### 2.3、二叉树遍历
+
+- 前序遍历: 先输出父节点，再遍历左子树和右子树
+
+- 中序遍历: 先遍历左子树，再输出父节点，再遍历右子树
+
+- 后序遍历: 先遍历左子树，再遍历右子树，最后输出父节点
+
+   <img src="https://ftp.bmp.ovh/imgs/2020/09/42851fb584f4cbd4.png" style="zoom:50%;" /> 
+
+#### 2.4 二叉树查找
+
+ <img src="https://ftp.bmp.ovh/imgs/2020/09/b192e7fbbddfe2e8.png" style="zoom:50%;" /> 
+
+#### 2.5 二叉树删除
+
+要求：
+
+- 如果删除的节点是叶子节点，则删除该节点
+- 如果删除的节点是非叶子节点，则删除该子树.
+
+ <img src="https://ftp.bmp.ovh/imgs/2020/09/0f83e3bc3b9c08ba.png" style="zoom:50%;" /> 
+
+~~~ java
+package com.mace.tree;
+
+/**
+ * 二叉树遍历 前序 中序 后序 遍历 查找 删除
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-04 14:52
+ */
+public class BinaryTreeDemo {
+    public static void main(String[] args) {
+        //先需要创建一颗二叉树
+        BinaryTree binaryTree = new BinaryTree();
+        //创建需要的结点
+        HeroNode root = new HeroNode(1, "宋江");
+        HeroNode node2 = new HeroNode(2, "吴用");
+        HeroNode node3 = new HeroNode(3, "卢俊义");
+        HeroNode node4 = new HeroNode(4, "林冲");
+        HeroNode node5 = new HeroNode(5, "关胜");
+
+        //说明，我们先手动创建该二叉树，后面我们学习递归的方式创建二叉树
+        root.setLeft(node2);
+        root.setRight(node3);
+        node3.setRight(node4);
+        node3.setLeft(node5);
+        binaryTree.setRoot(root);
+
+        //测试
+//		System.out.println("前序遍历"); // 1,2,3,5,4
+//		binaryTree.preOrder();
+
+        //测试
+//		System.out.println("中序遍历");
+//		binaryTree.infixOrder(); // 2,1,5,3,4
+//
+//		System.out.println("后序遍历");
+//		binaryTree.postOrder(); // 2,5,4,3,1
+
+        //前序遍历
+        //前序遍历的次数 ：4
+//		System.out.println("前序遍历方式~~~");
+//		HeroNode resNode = binaryTree.preOrderSearch(5);
+//		if (resNode != null) {
+//			System.out.printf("找到了，信息为 no=%d name=%s", resNode.getNo(), resNode.getName());
+//		} else {
+//			System.out.printf("没有找到 no = %d 的英雄", 5);
+//		}
+
+        //中序遍历查找
+        //中序遍历3次
+//		System.out.println("中序遍历方式~~~");
+//		HeroNode resNode = binaryTree.infixOrderSearch(5);
+//		if (resNode != null) {
+//			System.out.printf("找到了，信息为 no=%d name=%s", resNode.getNo(), resNode.getName());
+//		} else {
+//			System.out.printf("没有找到 no = %d 的英雄", 5);
+//		}
+
+        //后序遍历查找
+        //后序遍历查找的次数  2次
+//		System.out.println("后序遍历方式~~~");
+//		HeroNode resNode = binaryTree.postOrderSearch(5);
+//		if (resNode != null) {
+//			System.out.printf("找到了，信息为 no=%d name=%s", resNode.getNo(), resNode.getName());
+//		} else {
+//			System.out.printf("没有找到 no = %d 的英雄", 5);
+//		}
+
+        //测试一把删除结点
+
+        System.out.println("删除前,前序遍历");
+        binaryTree.preOrder(); //  1,2,3,5,4
+        binaryTree.delNode(5);
+        //binaryTree.delNode(3);
+        System.out.println("删除后，前序遍历");
+        binaryTree.preOrder(); // 1,2,3,4
+
+
+
+    }
+
+}
+
+//定义BinaryTree 二叉树
+class BinaryTree {
+    private HeroNode root;
+
+    public void setRoot(HeroNode root) {
+        this.root = root;
+    }
+
+    //删除结点
+    public void delNode(int no) {
+        if(root != null) {
+            //如果只有一个root结点, 这里立即判断root是不是就是要删除结点
+            if(root.getNo() == no) {
+                root = null;
+            } else {
+                //递归删除
+                root.delNode(no);
+            }
+        }else{
+            System.out.println("空树，不能删除~");
+        }
+    }
+    //前序遍历
+    public void preOrder() {
+        if(this.root != null) {
+            this.root.preOrder();
+        }else {
+            System.out.println("二叉树为空，无法遍历");
+        }
+    }
+
+    //中序遍历
+    public void infixOrder() {
+        if(this.root != null) {
+            this.root.infixOrder();
+        }else {
+            System.out.println("二叉树为空，无法遍历");
+        }
+    }
+    //后序遍历
+    public void postOrder() {
+        if(this.root != null) {
+            this.root.postOrder();
+        }else {
+            System.out.println("二叉树为空，无法遍历");
+        }
+    }
+
+    //前序遍历
+    public HeroNode preOrderSearch(int no) {
+        if(root != null) {
+            return root.preOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
+    //中序遍历
+    public HeroNode infixOrderSearch(int no) {
+        if(root != null) {
+            return root.infixOrderSearch(no);
+        }else {
+            return null;
+        }
+    }
+    //后序遍历
+    public HeroNode postOrderSearch(int no) {
+        if(root != null) {
+            return this.root.postOrderSearch(no);
+        }else {
+            return null;
+        }
+    }
+}
+
+//先创建HeroNode 结点
+class HeroNode {
+    private int no;
+    private String name;
+    private HeroNode left; //默认null
+    private HeroNode right; //默认null
+    public HeroNode(int no, String name) {
+        this.no = no;
+        this.name = name;
+    }
+    public int getNo() {
+        return no;
+    }
+    public void setNo(int no) {
+        this.no = no;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public HeroNode getLeft() {
+        return left;
+    }
+    public void setLeft(HeroNode left) {
+        this.left = left;
+    }
+    public HeroNode getRight() {
+        return right;
+    }
+    public void setRight(HeroNode right) {
+        this.right = right;
+    }
+    @Override
+    public String toString() {
+        return "HeroNode [no=" + no + ", name=" + name + "]";
+    }
+
+    //递归删除结点
+    //1.如果删除的节点是叶子节点，则删除该节点
+    //2.如果删除的节点是非叶子节点，则删除该子树
+    public void delNode(int no) {
+
+        //思路
+		/*
+		 * 	1. 因为我们的二叉树是单向的，所以我们是判断当前结点的子结点是否需要删除结点，而不能去判断当前这个结点是不是需要删除结点.
+			2. 如果当前结点的左子结点不为空，并且左子结点 就是要删除结点，就将this.left = null; 并且就返回(结束递归删除)
+			3. 如果当前结点的右子结点不为空，并且右子结点 就是要删除结点，就将this.right= null ;并且就返回(结束递归删除)
+			4. 如果第2和第3步没有删除结点，那么我们就需要向左子树进行递归删除
+			5.  如果第4步也没有删除结点，则应当向右子树进行递归删除.
+
+		 */
+        //2. 如果当前结点的左子结点不为空，并且左子结点 就是要删除结点，就将this.left = null; 并且就返回(结束递归删除)
+        if(this.left != null && this.left.no == no) {
+            this.left = null;
+            return;
+        }
+        //3.如果当前结点的右子结点不为空，并且右子结点 就是要删除结点，就将this.right= null ;并且就返回(结束递归删除)
+        if(this.right != null && this.right.no == no) {
+            this.right = null;
+            return;
+        }
+        //4.我们就需要向左子树进行递归删除
+        if(this.left != null) {
+            this.left.delNode(no);
+        }
+        //5.则应当向右子树进行递归删除
+        if(this.right != null) {
+            this.right.delNode(no);
+        }
+    }
+
+    //编写前序遍历的方法
+    public void preOrder() {
+        System.out.println(this); //先输出父结点
+        //递归向左子树前序遍历
+        if(this.left != null) {
+            this.left.preOrder();
+        }
+        //递归向右子树前序遍历
+        if(this.right != null) {
+            this.right.preOrder();
+        }
+    }
+    //中序遍历
+    public void infixOrder() {
+
+        //递归向左子树中序遍历
+        if(this.left != null) {
+            this.left.infixOrder();
+        }
+        //输出父结点
+        System.out.println(this);
+        //递归向右子树中序遍历
+        if(this.right != null) {
+            this.right.infixOrder();
+        }
+    }
+    //后序遍历
+    public void postOrder() {
+        if(this.left != null) {
+            this.left.postOrder();
+        }
+        if(this.right != null) {
+            this.right.postOrder();
+        }
+        System.out.println(this);
+    }
+
+    //前序遍历查找
+    /**
+     *
+     * @param no 查找no
+     * @return 如果找到就返回该Node ,如果没有找到返回 null
+     */
+    public HeroNode preOrderSearch(int no) {
+        System.out.println("进入前序遍历");
+        //比较当前结点是不是
+        if(this.no == no) {
+            return this;
+        }
+        //1.则判断当前结点的左子节点是否为空，如果不为空，则递归前序查找
+        //2.如果左递归前序查找，找到结点，则返回
+        HeroNode resNode = null;
+        if(this.left != null) {
+            resNode = this.left.preOrderSearch(no);
+        }
+        if(resNode != null) {//说明我们左子树找到
+            return resNode;
+        }
+        //1.左递归前序查找，找到结点，则返回，否继续判断，
+        //2.当前的结点的右子节点是否为空，如果不空，则继续向右递归前序查找
+        if(this.right != null) {
+            resNode = this.right.preOrderSearch(no);
+        }
+        return resNode;
+    }
+
+    //中序遍历查找
+    public HeroNode infixOrderSearch(int no) {
+        //判断当前结点的左子节点是否为空，如果不为空，则递归中序查找
+        HeroNode resNode = null;
+        if(this.left != null) {
+            resNode = this.left.infixOrderSearch(no);
+        }
+        if(resNode != null) {
+            return resNode;
+        }
+        System.out.println("进入中序查找");
+        //如果找到，则返回，如果没有找到，就和当前结点比较，如果是则返回当前结点
+        if(this.no == no) {
+            return this;
+        }
+        //否则继续进行右递归的中序查找
+        if(this.right != null) {
+            resNode = this.right.infixOrderSearch(no);
+        }
+        return resNode;
+
+    }
+
+    //后序遍历查找
+    public HeroNode postOrderSearch(int no) {
+
+        //判断当前结点的左子节点是否为空，如果不为空，则递归后序查找
+        HeroNode resNode = null;
+        if(this.left != null) {
+            resNode = this.left.postOrderSearch(no);
+        }
+        if(resNode != null) {//说明在左子树找到
+            return resNode;
+        }
+
+        //如果左子树没有找到，则向右子树递归进行后序遍历查找
+        if(this.right != null) {
+            resNode = this.right.postOrderSearch(no);
+        }
+        if(resNode != null) {
+            return resNode;
+        }
+        System.out.println("进入后序查找");
+        //如果左右子树都没有找到，就比较当前结点是不是
+        if(this.no == no) {
+            return this;
+        }
+        return resNode;
+    }
+}
+~~~
 
