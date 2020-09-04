@@ -2648,6 +2648,7 @@ public class BaHuangHou {
 
 }
 
+
 ~~~
 
 ##  九、排序
@@ -3554,6 +3555,7 @@ public class RadixSort {
     }
 }
 
+
 ~~~
 
 说明：
@@ -3566,3 +3568,246 @@ public class RadixSort {
 - 负数的数组，我们不用基数排序来进行排序, 如果要支持负数，参考: https://code.i-harness.com/zh-CN/q/e98fa9
 
  <img src="https://ftp.bmp.ovh/imgs/2020/09/f2f234c79ca56d2e.png" style="zoom: 50%;" /> 
+
+## 十、查找
+
+### 1、线性查找算法
+
+~~~ java
+package com.mace.search;
+
+/**
+ * 线性查找
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-03 15:25
+ */
+public class SeqSearch {
+    public static void main(String[] args) {
+        int [] arr = {1, 9, 11, -1, 34, 89};
+
+        int index = seqSearch(arr,9);
+
+        if(index == -1){
+            System.out.println("未找到。。。");
+        }else{
+            System.out.println("查找的值对应的索引为："+index);
+        }
+    }
+
+    public static int seqSearch(int[] arr, int val) {
+        /**
+         * 线性查找，从头到尾遍历
+         */
+        for(int i = 0 ; i < arr.length;i++){
+            if(arr[i] == val){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+~~~
+
+### 2、二分查找
+
+​	前提：有序数组
+
+~~~ java
+package com.mace.search;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 二分查找
+ *  前提：数组必须有序
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-03 15:40
+ */
+public class BinarySearch {
+    public static void main(String[] args) {
+        int [] arr = { 1, 8, 10, 89,1000,1000, 1234 };
+        int index = binarySearch2(arr,0,arr.length-1,9);
+        System.out.println(index);
+
+    }
+    /**
+     * 二分查找递归法
+     * @param arr 有序数组
+     * @param left 起始索引 0
+     * @param right 末尾索引 arr.length-1
+     * @param val 查找的值
+     * @return
+     */
+    public static int binarySearch(int [] arr,int left,int right,int val){
+        if(left > right){
+            return -1;
+        }
+        int mid = (left + right)/2;
+        int midVal = arr[mid];
+
+        if(val < midVal){
+            //向左递归
+            return binarySearch(arr, left, mid-1, val);
+        }else if(val > midVal){
+            //向右递归
+           return binarySearch(arr, mid+1, right, val);
+        }else{
+            return mid;
+        }
+    }
+    /**
+     * 二分查找循环法
+     * @param arr 有序数组
+     * @param left 起始索引 0
+     * @param right 末尾索引 arr.length-1
+     * @param val 查找的值
+     * @return
+     */
+    public static int binarySearch2(int [] arr,int left,int right,int val){
+        while(true){
+            /**
+             * 没找见退出循环
+             */
+            if(left > right){
+                return -1;
+            }
+
+            int mid = (left + right)/2;
+            int midVal = arr[mid];
+            if(val < midVal){
+                right = mid - 1;
+            }else if(val > midVal){
+                left = mid + 1;
+            }else{
+                return mid;
+            }
+        }
+    }
+    //完成一个课后思考题:
+    /*
+     * 课后思考题： {1,8, 10, 89, 1000, 1000，1234} 当一个有序数组中，
+     * 有多个相同的数值时，如何将所有的数值都查找到，比如这里的 1000
+     *
+     * 思路分析
+     * 1. 在找到mid 索引值，不要马上返回
+     * 2. 向mid 索引值的左边扫描，将所有满足 1000， 的元素的下标，加入到集合ArrayList
+     * 3. 向mid 索引值的右边扫描，将所有满足 1000， 的元素的下标，加入到集合ArrayList
+     * 4. 将Arraylist返回
+     */
+
+    public static List<Integer> binarySearch3(int[] arr, int left, int right, int findVal) {
+        // 当 left > right 时，说明递归整个数组，但是没有找到
+        if (left > right) {
+            return new ArrayList<Integer>();
+        }
+        int mid = (left + right) / 2;
+        int midVal = arr[mid];
+
+        if (findVal > midVal) { // 向 右递归
+            return binarySearch3(arr, mid + 1, right, findVal);
+        } else if (findVal < midVal) { // 向左递归
+            return binarySearch3(arr, left, mid - 1, findVal);
+        } else {
+//			 * 思路分析
+//			 * 1. 在找到mid 索引值，不要马上返回
+//			 * 2. 向mid 索引值的左边扫描，将所有满足 1000， 的元素的下标，加入到集合ArrayList
+//			 * 3. 向mid 索引值的右边扫描，将所有满足 1000， 的元素的下标，加入到集合ArrayList
+//			 * 4. 将Arraylist返回
+
+            List<Integer> resIndexlist = new ArrayList<Integer>();
+            //向mid 索引值的左边扫描，将所有满足 1000， 的元素的下标，加入到集合ArrayList
+            int temp = mid - 1;
+            while(true) {
+                if (temp < 0 || arr[temp] != findVal) {//退出
+                    break;
+                }
+                //否则，就temp 放入到 resIndexlist
+                resIndexlist.add(temp);
+                temp -= 1; //temp左移
+            }
+            resIndexlist.add(mid);  
+            //向mid 索引值的右边扫描，将所有满足 1000， 的元素的下标，加入到集合ArrayList
+            temp = mid + 1;
+            while(true) {
+                if (temp > arr.length - 1 || arr[temp] != findVal) {//退出
+                    break;
+                }
+                //否则，就temp 放入到 resIndexlist
+                resIndexlist.add(temp);
+                temp += 1; //temp右移
+            }
+            return resIndexlist;
+        }
+    }
+}
+~~~
+
+### 3、插值查找
+
+插值查找算法类似于二分查找，不同的是插值查找每次从自适应 mid 处开始查找。
+
+将折半查找中的求 mid 索引的公式 , low 表示左边索引 left, high 表示右边索引 right.
+key 就是前面我们讲的 findVal
+
+ ![](https://ftp.bmp.ovh/imgs/2020/09/c7c2aa2c19b2c2aa.png) 
+
+~~~java
+int mid = left + (right – left) * (findVal – arr[left]) / (arr[right] – arr[left])
+~~~
+
+~~~ java
+package com.mace.search;
+
+import java.util.Arrays;
+/**
+ * 插值查找
+ *  有序数组
+ * @author zhangxuhui
+ * @email zxh_1633@163.com
+ * @create 2020-09-03 16:57
+ */
+public class InsertSecach {
+    public static void main(String[] args) {
+        int [] arr = new int[100];
+        for(int i = 0 ; i < 100;i++){
+            arr[i] = i + 1;
+        }
+        int index = insertSearch(arr, 0, arr.length - 1, 100);
+        System.out.println(index);
+    }
+
+    /**
+     * 插值查找
+     * @param arr 查找的数组
+     * @param left 开始索引
+     * @param right 末尾索引
+     * @param val 查找的值
+     * @return
+     */
+    public static int insertSearch(int [] arr,int left ,int right,int val){
+        if(left > right || val < arr[left] || val > arr[right]){
+            return -1;
+        }
+        int mid = left + (right - left) * (val - arr[left]) / (arr[right] - arr[left]);
+        int midVal = arr[mid];
+        if (val > midVal) { // 说明应该向右边递归
+            return insertSearch(arr, mid + 1, right, val);
+        } else if (val < midVal) { // 说明向左递归查找
+            return insertSearch(arr, left, mid - 1, val);
+        } else {
+            return mid;
+        }
+    }
+}
+
+~~~
+
+插值查找注意事项：
+
+- 对于数据量较大，关键字分布比较均匀的查找表来说，采用插值查找, 速度较快.
+- 关键字分布不均匀的情况下，该方法不一定比折半查找要好
+
