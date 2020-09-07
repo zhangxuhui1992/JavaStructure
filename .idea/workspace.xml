@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d73242-f665-44cb-8d1b-87b61ab53e02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/mace/tree/HeapSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mace/tree/HeffmanTreeDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,12 +22,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/mace/tree/HeapSort.java">
+        <entry file="file://$PROJECT_DIR$/src/com/mace/tree/HeffmanTreeDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="22">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2258#2259#0" expanded="true" />
+                <element signature="e#2292#2293#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,6 +94,7 @@
         <option value="$PROJECT_DIR$/src/com/mace/tree/ThreadBinaryTreeDemo.java" />
         <option value="$PROJECT_DIR$/src/com/mace/tree/threabinarytree/ThreadBinaryTreeDemo.java" />
         <option value="$PROJECT_DIR$/src/com/mace/tree/HeapSort.java" />
+        <option value="$PROJECT_DIR$/src/com/mace/tree/HeffmanTreeDemo.java" />
       </list>
     </option>
   </component>
@@ -148,6 +151,14 @@
               <item name="mace" type="462c0819:PsiDirectoryNode" />
               <item name="tree" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mace" type="462c0819:PsiDirectoryNode" />
+              <item name="tree" type="462c0819:PsiDirectoryNode" />
+              <item name="HeffmanTreeDemo.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -178,26 +189,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HeapSort">
+  <component name="RunManager" selected="Application.HeffmanTreeDemo">
     <configuration name="ArrayBinaryTreeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mace.tree.ArrayBinaryTreeDemo" />
       <module name="Java数据结构和算法" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.mace.tree.threabinarytree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mace.search.BinarySearch" />
-      <module name="Java数据结构和算法" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mace.search.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -231,6 +229,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HeffmanTreeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mace.tree.HeffmanTreeDemo" />
+      <module name="Java数据结构和算法" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mace.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InsertSecach" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mace.search.InsertSecach" />
       <module name="Java数据结构和算法" />
@@ -246,11 +257,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HeffmanTreeDemo" />
         <item itemvalue="Application.HeapSort" />
         <item itemvalue="Application.ArrayBinaryTreeDemo" />
         <item itemvalue="Application.FbiSearch" />
         <item itemvalue="Application.InsertSecach" />
-        <item itemvalue="Application.BinarySearch" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +295,7 @@
       <workItem from="1599010329151" duration="14730000" />
       <workItem from="1599095450372" duration="12393000" />
       <workItem from="1599181813108" duration="8375000" />
-      <workItem from="1599441826869" duration="7246000" />
+      <workItem from="1599441826869" duration="8856000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -545,11 +556,18 @@
       <option name="project" value="LOCAL" />
       <updated>1599450332273</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="堆排序">
+      <created>1599462910746</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1599462910746</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125478000" />
+    <option name="totallyTimeSpent" value="127088000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -562,7 +580,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2587601" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -571,7 +588,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37026238" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37026238" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39795917" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -668,7 +685,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="单链表 逆序打印" />
     <MESSAGE value="双向链表 增删改查" />
     <MESSAGE value="单向环形链表 约瑟夫问题" />
     <MESSAGE value="数组模拟栈 代码实现" />
@@ -693,7 +709,8 @@
     <MESSAGE value="二叉树 遍历 查找 删除" />
     <MESSAGE value="顺序存储二叉树" />
     <MESSAGE value="线索化二叉树" />
-    <option name="LAST_COMMIT_MESSAGE" value="线索化二叉树" />
+    <MESSAGE value="堆排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="堆排序" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -761,17 +778,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/io/PrintStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1036">
-          <caret line="869" column="43" selection-start-line="869" selection-start-column="37" selection-end-line="869" selection-end-column="43" />
-          <folding>
-            <element signature="e#29974#29975#0" expanded="true" />
-            <element signature="e#30017#30018#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/io/BufferedReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -1004,19 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="143" column="30" lean-forward="true" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
-          <folding>
-            <element signature="e#5027#5028#0" expanded="true" />
-            <element signature="e#5098#5099#0" expanded="true" />
-            <element signature="e#177013#177014#0" expanded="true" />
-            <element signature="e#177054#177055#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/sort/BubbleSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-164">
@@ -1162,10 +1155,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/tree/HeapSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="220">
+          <caret line="43" column="2" lean-forward="true" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="1337" column="24" selection-start-line="1337" selection-start-column="24" selection-end-line="1337" selection-end-column="24" />
+          <folding>
+            <element signature="e#5027#5028#0" expanded="true" />
+            <element signature="e#5098#5099#0" expanded="true" />
+            <element signature="e#177013#177014#0" expanded="true" />
+            <element signature="e#177054#177055#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="477" column="18" selection-start-line="477" selection-start-column="18" selection-end-line="477" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/SystemForJava/java_1.8/src.zip!/java/util/Collections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="140" column="15" selection-start-line="140" selection-start-column="15" selection-end-line="140" selection-end-column="15" />
+          <folding>
+            <element signature="e#5644#5645#0" expanded="true" />
+            <element signature="e#5675#5676#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mace/tree/HeffmanTreeDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2258#2259#0" expanded="true" />
+            <element signature="e#2292#2293#0" expanded="true" />
           </folding>
         </state>
       </provider>
