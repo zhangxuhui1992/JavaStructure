@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d73242-f665-44cb-8d1b-87b61ab53e02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/mace/tree/threabinarytree/ThreadBinaryTreeDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mace/tree/HeapSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,41 +22,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/mace/tree/threabinarytree/ThreadBinaryTreeDemo.java">
+        <entry file="file://$PROJECT_DIR$/src/com/mace/tree/HeapSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8932">
-              <caret line="406" column="5" selection-start-line="406" selection-start-column="5" selection-end-line="406" selection-end-column="5" />
+            <state relative-caret-position="242">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
-                <element signature="e#1579#1580#0" expanded="true" />
-                <element signature="e#1611#1612#0" expanded="true" />
-                <element signature="e#1672#1673#0" expanded="true" />
-                <element signature="e#1712#1713#0" expanded="true" />
-                <element signature="e#5159#5160#0" expanded="true" />
-                <element signature="e#5190#5191#0" expanded="true" />
-                <element signature="e#5234#5235#0" expanded="true" />
-                <element signature="e#5274#5275#0" expanded="true" />
-                <element signature="e#5306#5307#0" expanded="true" />
-                <element signature="e#5338#5339#0" expanded="true" />
-                <element signature="e#5384#5385#0" expanded="true" />
-                <element signature="e#5426#5427#0" expanded="true" />
-                <element signature="e#5548#5549#0" expanded="true" />
-                <element signature="e#5573#5574#0" expanded="true" />
-                <element signature="e#5605#5606#0" expanded="true" />
-                <element signature="e#5633#5634#0" expanded="true" />
-                <element signature="e#5663#5664#0" expanded="true" />
-                <element signature="e#5690#5691#0" expanded="true" />
-                <element signature="e#5729#5730#0" expanded="true" />
-                <element signature="e#5761#5762#0" expanded="true" />
-                <element signature="e#5793#5794#0" expanded="true" />
-                <element signature="e#5820#5821#0" expanded="true" />
-                <element signature="e#5861#5862#0" expanded="true" />
-                <element signature="e#5893#5894#0" expanded="true" />
-                <element signature="e#5926#5927#0" expanded="true" />
-                <element signature="e#5954#5955#0" expanded="true" />
-                <element signature="e#5997#5998#0" expanded="true" />
-                <element signature="e#6031#6032#0" expanded="true" />
-                <element signature="e#6076#6077#0" expanded="true" />
-                <element signature="e#6144#6145#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,6 +91,7 @@
         <option value="$PROJECT_DIR$/src/com/mace/tree/ArrayBinaryTreeDemo.java" />
         <option value="$PROJECT_DIR$/src/com/mace/tree/ThreadBinaryTreeDemo.java" />
         <option value="$PROJECT_DIR$/src/com/mace/tree/threabinarytree/ThreadBinaryTreeDemo.java" />
+        <option value="$PROJECT_DIR$/src/com/mace/tree/HeapSort.java" />
       </list>
     </option>
   </component>
@@ -176,31 +148,6 @@
               <item name="mace" type="462c0819:PsiDirectoryNode" />
               <item name="tree" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mace" type="462c0819:PsiDirectoryNode" />
-              <item name="tree" type="462c0819:PsiDirectoryNode" />
-              <item name="threabinarytree" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mace" type="462c0819:PsiDirectoryNode" />
-              <item name="tree" type="462c0819:PsiDirectoryNode" />
-              <item name="threabinarytree" type="462c0819:PsiDirectoryNode" />
-              <item name="ThreadBinaryTreeDemo.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="Java数据结构和算法" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java数据结构和算法" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mace" type="462c0819:PsiDirectoryNode" />
-              <item name="tree" type="462c0819:PsiDirectoryNode" />
-              <item name="ArrayBinaryTreeDemo.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -231,7 +178,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ArrayBinaryTreeDemo">
+  <component name="RunManager" selected="Application.HeapSort">
     <configuration name="ArrayBinaryTreeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mace.tree.ArrayBinaryTreeDemo" />
       <module name="Java数据结构和算法" />
@@ -271,6 +218,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HeapSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mace.tree.HeapSort" />
+      <module name="Java数据结构和算法" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mace.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InsertSecach" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mace.search.InsertSecach" />
       <module name="Java数据结构和算法" />
@@ -284,26 +244,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SeqSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mace.search.SeqSearch" />
-      <module name="Java数据结构和算法" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mace.search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HeapSort" />
         <item itemvalue="Application.ArrayBinaryTreeDemo" />
         <item itemvalue="Application.FbiSearch" />
         <item itemvalue="Application.InsertSecach" />
         <item itemvalue="Application.BinarySearch" />
-        <item itemvalue="Application.SeqSearch" />
       </list>
     </recent_temporary>
   </component>
@@ -337,7 +284,7 @@
       <workItem from="1599010329151" duration="14730000" />
       <workItem from="1599095450372" duration="12393000" />
       <workItem from="1599181813108" duration="8375000" />
-      <workItem from="1599441826869" duration="4794000" />
+      <workItem from="1599441826869" duration="7246000" />
     </task>
     <task id="LOCAL-00001" summary="稀疏数组">
       <created>1596594823253</created>
@@ -591,11 +538,18 @@
       <option name="project" value="LOCAL" />
       <updated>1599444968009</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="线索化二叉树">
+      <created>1599450332273</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1599450332273</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123026000" />
+    <option name="totallyTimeSpent" value="125478000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -714,7 +668,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="单链表 反转" />
     <MESSAGE value="单链表 逆序打印" />
     <MESSAGE value="双向链表 增删改查" />
     <MESSAGE value="单向环形链表 约瑟夫问题" />
@@ -739,7 +692,8 @@
     <MESSAGE value="哈希表" />
     <MESSAGE value="二叉树 遍历 查找 删除" />
     <MESSAGE value="顺序存储二叉树" />
-    <option name="LAST_COMMIT_MESSAGE" value="顺序存储二叉树" />
+    <MESSAGE value="线索化二叉树" />
+    <option name="LAST_COMMIT_MESSAGE" value="线索化二叉树" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1195,39 +1149,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mace/tree/threabinarytree/ThreadBinaryTreeDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8932">
-          <caret line="406" column="5" selection-start-line="406" selection-start-column="5" selection-end-line="406" selection-end-column="5" />
+        <state relative-caret-position="114">
+          <caret line="395" column="22" selection-end-line="408" />
           <folding>
             <element signature="e#1579#1580#0" expanded="true" />
             <element signature="e#1611#1612#0" expanded="true" />
             <element signature="e#1672#1673#0" expanded="true" />
             <element signature="e#1712#1713#0" expanded="true" />
-            <element signature="e#5159#5160#0" expanded="true" />
-            <element signature="e#5190#5191#0" expanded="true" />
-            <element signature="e#5234#5235#0" expanded="true" />
-            <element signature="e#5274#5275#0" expanded="true" />
-            <element signature="e#5306#5307#0" expanded="true" />
-            <element signature="e#5338#5339#0" expanded="true" />
-            <element signature="e#5384#5385#0" expanded="true" />
-            <element signature="e#5426#5427#0" expanded="true" />
-            <element signature="e#5548#5549#0" expanded="true" />
-            <element signature="e#5573#5574#0" expanded="true" />
-            <element signature="e#5605#5606#0" expanded="true" />
-            <element signature="e#5633#5634#0" expanded="true" />
-            <element signature="e#5663#5664#0" expanded="true" />
-            <element signature="e#5690#5691#0" expanded="true" />
-            <element signature="e#5729#5730#0" expanded="true" />
-            <element signature="e#5761#5762#0" expanded="true" />
-            <element signature="e#5793#5794#0" expanded="true" />
-            <element signature="e#5820#5821#0" expanded="true" />
-            <element signature="e#5861#5862#0" expanded="true" />
-            <element signature="e#5893#5894#0" expanded="true" />
-            <element signature="e#5926#5927#0" expanded="true" />
-            <element signature="e#5954#5955#0" expanded="true" />
-            <element signature="e#5997#5998#0" expanded="true" />
-            <element signature="e#6031#6032#0" expanded="true" />
-            <element signature="e#6076#6077#0" expanded="true" />
-            <element signature="e#6144#6145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mace/tree/HeapSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
